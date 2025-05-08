@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-08T12:00:28.579426" rpa="false" schemaversion="5">
+<suite id="s1" name="testCases" source="C:\Users\Hanane.BEN-AZIZE\Downloads\robotTests\testCases">
+<suite id="s1-s1" name="Suites" source="C:\Users\Hanane.BEN-AZIZE\Downloads\robotTests\testCases\suites">
+<suite id="s1-s1-s1" name="firstTestFile" source="C:\Users\Hanane.BEN-AZIZE\Downloads\robotTests\testCases\suites\firstTestFile.robot">
+<test id="s1-s1-s1-t1" name="Valid Login" line="11">
+<kw name="Given the user navigates to the login page" owner="common_keywords">
+<kw name="Open Browser To Login Page" owner="cdiscount_login_page_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-08T12:00:29.531280" level="INFO">Opening browser 'chrome' to base url 'https://order.cdiscount.com/Account/LoginLight.html?referrer='.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-08T12:00:29.530999" elapsed="7.113559"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-08T12:00:36.647192" elapsed="0.099185"/>
+</kw>
+<kw name="Handle Cookie Banner" owner="cdiscount_login_page_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${COOKIE_ACCEPT_BUTTON}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-08T12:00:36.749569" elapsed="0.142485"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-08T12:00:36.893669" level="INFO">Clicking button 'xpath=//button[@id='footer_tc_privacy_button_2']'.</msg>
+<arg>${COOKIE_ACCEPT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T12:00:36.892946" elapsed="0.211286"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-08T12:00:37.107363" level="INFO">Cookie banner accepted</msg>
+<arg>Cookie banner accepted</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-08T12:00:37.107027" elapsed="0.000450"/>
+</kw>
+<status status="PASS" start="2025-05-08T12:00:36.748253" elapsed="0.362058"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-08T12:00:37.110864" elapsed="1.046746"/>
+</kw>
+<status status="PASS" start="2025-05-08T12:00:29.530686" elapsed="8.627909"/>
+</kw>
+<status status="PASS" start="2025-05-08T12:00:29.530265" elapsed="8.630469"/>
+</kw>
+<kw name="When the user logs in with valid credentials" owner="common_keywords">
+<kw name="Login With Credentials" owner="cdiscount_login_page_keywords">
+<kw name="Enter Email And Continue" owner="cdiscount_login_page_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-08T12:00:38.181785" level="INFO">Typing text 'benazizehanane@gmail.com' into text field 'xpath=//input[@id="ValidateEmailViewData_ValidateEmailFormData_Email"]'.</msg>
+<arg>${EMAIL_FIELD}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T12:00:38.180423" elapsed="0.265346"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-08T12:00:38.449267" level="INFO">Clicking button 'xpath=//input[@data-seln='validateEmail']'.</msg>
+<arg>${LOGIN_BUTTON_AFTER_EMAIL}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T12:00:38.448723" elapsed="1.204582"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${PASSWORD_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-08T12:00:39.657805" elapsed="0.049680"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-05-08T12:00:38.179235" elapsed="1.528542"/>
+</kw>
+<kw name="Enter Password And Submit" owner="cdiscount_login_page_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-08T12:00:39.708860" level="INFO">Typing text 'cdiscountA123?' into text field 'xpath=//input[@id="CustomerLogin_CustomerLoginFormData_Password"]'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T12:00:39.708488" elapsed="0.181704"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-08T12:00:39.895207" level="INFO">Clicking button 'xpath=//input[@data-seln='signIn']'.</msg>
+<arg>${LOGIN_BUTTON_AFTER_PASSWORD}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T12:00:39.894626" elapsed="5.133206"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-08T12:00:45.034748" elapsed="0.019571"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-08T12:00:39.708099" elapsed="5.346594"/>
+</kw>
+<arg>${VALID_EMAIL}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2025-05-08T12:00:38.178223" elapsed="6.876836"/>
+</kw>
+<status status="PASS" start="2025-05-08T12:00:38.176387" elapsed="6.879001"/>
+</kw>
+<kw name="Then the user should be redirected to their account page" owner="common_keywords">
+<kw name="User Should Be Redirected To Account Page" owner="cdiscount_login_page_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${ACCOUNT_PAGE_IDENTIFIER}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-08T12:00:45.058083" elapsed="0.025910"/>
+</kw>
+<status status="PASS" start="2025-05-08T12:00:45.057398" elapsed="0.026917"/>
+</kw>
+<status status="PASS" start="2025-05-08T12:00:45.056322" elapsed="0.028174"/>
+</kw>
+<kw name="Then the chrome browser is closed" owner="common_keywords">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-08T12:00:45.085299" elapsed="3.496491"/>
+</kw>
+<status status="PASS" start="2025-05-08T12:00:45.084940" elapsed="3.497250"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" start="2025-05-08T12:00:29.528831" elapsed="19.054033"/>
+</test>
+<test id="s1-s1-s1-t2" name="Invalid Login" line="19">
+<kw name="Given the user navigates to the login page" owner="common_keywords">
+<kw name="Open Browser To Login Page" owner="cdiscount_login_page_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-08T12:00:48.591159" level="INFO">Opening browser 'chrome' to base url 'https://order.cdiscount.com/Account/LoginLight.html?referrer='.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-08T12:00:48.590491" elapsed="8.259944"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-08T12:00:56.853029" elapsed="0.042992"/>
+</kw>
+<kw name="Handle Cookie Banner" owner="cdiscount_login_page_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${COOKIE_ACCEPT_BUTTON}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-08T12:00:56.900702" elapsed="0.068871"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-08T12:00:56.970373" level="INFO">Clicking button 'xpath=//button[@id='footer_tc_privacy_button_2']'.</msg>
+<arg>${COOKIE_ACCEPT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T12:00:56.969993" elapsed="0.293554"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-08T12:00:57.266952" level="INFO">Cookie banner accepted</msg>
+<arg>Cookie banner accepted</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-08T12:00:57.266428" elapsed="0.000686"/>
+</kw>
+<status status="PASS" start="2025-05-08T12:00:56.898609" elapsed="0.371660"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-08T12:00:57.270896" elapsed="0.092662"/>
+</kw>
+<status status="PASS" start="2025-05-08T12:00:48.589999" elapsed="8.774132"/>
+</kw>
+<status status="PASS" start="2025-05-08T12:00:48.589434" elapsed="8.775102"/>
+</kw>
+<kw name="When the user logs in with invalid credentials" owner="common_keywords">
+<kw name="Login With Credentials" owner="cdiscount_login_page_keywords">
+<kw name="Enter Email And Continue" owner="cdiscount_login_page_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-08T12:00:57.369620" level="INFO">Typing text 'benazizehanane@gmail.com' into text field 'xpath=//input[@id="ValidateEmailViewData_ValidateEmailFormData_Email"]'.</msg>
+<arg>${EMAIL_FIELD}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T12:00:57.368994" elapsed="1.323578"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-08T12:00:58.696790" level="INFO">Clicking button 'xpath=//input[@data-seln='validateEmail']'.</msg>
+<arg>${LOGIN_BUTTON_AFTER_EMAIL}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T12:00:58.696346" elapsed="1.063141"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${PASSWORD_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-08T12:00:59.762981" elapsed="0.055526"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-05-08T12:00:57.368309" elapsed="2.450948"/>
+</kw>
+<kw name="Enter Password And Submit" owner="cdiscount_login_page_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-08T12:00:59.821998" level="INFO">Typing text 'wrongPass' into text field 'xpath=//input[@id="CustomerLogin_CustomerLoginFormData_Password"]'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T12:00:59.821273" elapsed="0.215932"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-08T12:01:00.042915" level="INFO">Clicking button 'xpath=//input[@data-seln='signIn']'.</msg>
+<arg>${LOGIN_BUTTON_AFTER_PASSWORD}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T12:01:00.042500" elapsed="1.232646"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-08T12:01:01.278502" elapsed="0.012773"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-08T12:00:59.820242" elapsed="1.471325"/>
+</kw>
+<arg>${INVALID_EMAIL}</arg>
+<arg>${INVALID_PASSWORD}</arg>
+<status status="PASS" start="2025-05-08T12:00:57.367447" elapsed="3.924369"/>
+</kw>
+<status status="PASS" start="2025-05-08T12:00:57.366764" elapsed="3.925421"/>
+</kw>
+<kw name="Then an error message should be displayed" owner="common_keywords">
+<kw name="Error Message Should Be Displayed" owner="cdiscount_login_page_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOGIN_ERROR_MESSAGE}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-08T12:01:01.293685" elapsed="0.011907"/>
+</kw>
+<status status="PASS" start="2025-05-08T12:01:01.293352" elapsed="0.012547"/>
+</kw>
+<status status="PASS" start="2025-05-08T12:01:01.292937" elapsed="0.013149"/>
+</kw>
+<kw name="Then the chrome browser is closed" owner="common_keywords">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-08T12:01:01.307648" elapsed="3.466509"/>
+</kw>
+<status status="PASS" start="2025-05-08T12:01:01.307237" elapsed="3.467174"/>
+</kw>
+<tag>regression</tag>
+<status status="PASS" start="2025-05-08T12:00:48.588273" elapsed="16.186577"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-05-08T12:01:04.778422" elapsed="0.000222"/>
+</kw>
+<status status="PASS" start="2025-05-08T12:00:28.857645" elapsed="35.921153"/>
+</suite>
+<status status="PASS" start="2025-05-08T12:00:28.855250" elapsed="35.930548"/>
+</suite>
+<status status="PASS" start="2025-05-08T12:00:28.837661" elapsed="35.949375"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">regression</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat name="testCases" id="s1" pass="2" fail="0" skip="0">testCases</stat>
+<stat name="Suites" id="s1-s1" pass="2" fail="0" skip="0">testCases.Suites</stat>
+<stat name="firstTestFile" id="s1-s1-s1" pass="2" fail="0" skip="0">testCases.Suites.firstTestFile</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
