@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <robot generator="Robot 7.2.2 (Python 3.11.0 on win32)" generated="2025-05-09T12:33:52.095498" rpa="false" schemaversion="5">
 <suite id="s1" name="searchTests" source="C:\Users\Douae.MAARAD\OneDrive - Akkodis\Desktop\RobotTests\testCases\searchTests.robot">
 <test id="s1-t1" name="Search Products By Keyword" line="11">
@@ -15,10 +16,33 @@
 <status status="PASS" start="2025-05-09T12:33:58.960249" elapsed="0.033886"/>
 </kw>
 <kw name="Accept Cookies If Present" owner="common_keywords">
+=======
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-08T14:42:23.587063" rpa="false" schemaversion="5">
+<suite id="s1" name="TestCases" source="C:\Users\Hanane.BEN-AZIZE\Downloads\robotTests\TestCases">
+<suite id="s1-s1" name="connexionUser" source="C:\Users\Hanane.BEN-AZIZE\Downloads\robotTests\TestCases\connexionUser.robot">
+<test id="s1-s1-t1" name="Connexion Avec Credentials Valides" line="10">
+<kw name="Ouvrir Navigateur" owner="common_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:42:24.431829" level="INFO">Opening browser 'chrome' to base url 'https://www.cdiscount.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-08T14:42:24.431529" elapsed="7.426725"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-08T14:42:31.861834" elapsed="0.273822"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:24.430691" elapsed="7.705641"/>
+</kw>
+<kw name="Aller Jusqu'à Saisie Mot De Passe" owner="login_page">
+<kw name="Accepter Les Cookies Si Présent" owner="login_page">
+>>>>>>> 1eb997fdc6fc8ba5e1a4c08fc7ddfd7ef82f2bab
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${ACCEPT_COOKIES_BUTTON}</arg>
 <arg>timeout=15s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
+<<<<<<< HEAD
 <status status="PASS" start="2025-05-09T12:33:58.995147" elapsed="0.371498"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
@@ -28,6 +52,17 @@
 <status status="PASS" start="2025-05-09T12:33:59.366645" elapsed="0.202439"/>
 </kw>
 <status status="PASS" start="2025-05-09T12:33:58.994135" elapsed="0.575948"/>
+=======
+<status status="PASS" start="2025-05-08T14:42:32.139592" elapsed="0.795897"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:42:32.937748" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Accepter') or contains(text(), 'J’accepte')]'.</msg>
+<arg>${ACCEPTER_COOKIES_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T14:42:32.936743" elapsed="0.614603"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:32.138856" elapsed="1.416990"/>
+>>>>>>> 1eb997fdc6fc8ba5e1a4c08fc7ddfd7ef82f2bab
 </kw>
 <status status="PASS" start="2025-05-09T12:33:52.517531" elapsed="7.052552"/>
 </kw>
@@ -36,6 +71,7 @@
 <arg>${SEARCH_INPUT}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
+<<<<<<< HEAD
 <status status="PASS" start="2025-05-09T12:33:59.571102" elapsed="0.028711"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
@@ -53,6 +89,46 @@
 <arg>RETURN</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
 <status status="PASS" start="2025-05-09T12:33:59.684150" elapsed="3.395899"/>
+=======
+<status status="PASS" start="2025-05-08T14:42:33.557585" elapsed="4.380636"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:42:37.939785" level="INFO">Clicking element 'xpath=//div[@class='c-access__compte js-access__compte']/a'.</msg>
+<arg>${CONNECTEZ_VOUS_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T14:42:37.939078" elapsed="4.656981"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:33.556716" elapsed="9.043513"/>
+</kw>
+<kw name="Attendre Redirection Page Login" owner="login_page">
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>/Account/LoginLight.html</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-05-08T14:42:42.604976" elapsed="0.022080"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:42.603293" elapsed="0.024487"/>
+</kw>
+<kw name="Saisir Email Et Continuer" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-08T14:42:42.629536" elapsed="0.062998"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:42:42.694018" level="INFO">Typing text 'douasmaa03@gmail.com' into text field 'id=ValidateEmailViewData_ValidateEmailFormData_Email'.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T14:42:42.693334" elapsed="0.338334"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:42:43.037482" level="INFO">Clicking element 'xpath=//input[@data-seln="validateEmail"]'.</msg>
+<arg>${VALIDATE_EMAIL_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T14:42:43.036320" elapsed="1.607687"/>
+>>>>>>> 1eb997fdc6fc8ba5e1a4c08fc7ddfd7ef82f2bab
 </kw>
 <arg>${SEARCH_TERMS}</arg>
 <status status="PASS" start="2025-05-09T12:33:59.570083" elapsed="3.509966"/>
@@ -63,6 +139,7 @@
 <arg>${PRODUCT_TITLES}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
+<<<<<<< HEAD
 <status status="PASS" start="2025-05-09T12:34:03.081047" elapsed="0.110626"/>
 </kw>
 <kw name="Get WebElements" owner="SeleniumLibrary">
@@ -139,6 +216,50 @@
 <arg>${titles}[${index}]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
 <status status="PASS" start="2025-05-09T12:34:03.265609" elapsed="0.006868"/>
+=======
+<status status="PASS" start="2025-05-08T14:42:44.647591" elapsed="0.090953"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:42.628633" elapsed="2.110558"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:32.137676" elapsed="12.602040"/>
+</kw>
+<kw name="Saisir Mot De Passe Et Se Connecter" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PASSWORD_INPUT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-08T14:42:44.741835" elapsed="0.042943"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:42:44.787209" level="INFO">Typing text 'QuNRm37!nbjH7N!' into text field 'id=CustomerLogin_CustomerLoginFormData_Password'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T14:42:44.785843" elapsed="2.006967"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:42:46.797096" level="INFO">Clicking element 'xpath=//input[@value="Se connecter"]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T14:42:46.796365" elapsed="6.559715"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:44.740890" elapsed="8.619068"/>
+</kw>
+<kw name="Verifier Connexion Reussie" owner="login_page">
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${ACCOUNT_HOME_URL}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-05-08T14:42:53.374118" elapsed="0.096500"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:42:53.571306" level="INFO">Current location is 'https://clients.cdiscount.com/Account/Home.html'.</msg>
+<arg>${ACCOUNT_HOME_URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-08T14:42:53.471426" elapsed="0.100150"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:53.373064" elapsed="0.202012"/>
+>>>>>>> 1eb997fdc6fc8ba5e1a4c08fc7ddfd7ef82f2bab
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${text.lower()}</arg>
@@ -261,6 +382,7 @@
 <kw name="Close the Browser" owner="common_keywords" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
+<<<<<<< HEAD
 <status status="PASS" start="2025-05-09T12:34:03.329102" elapsed="2.444958"/>
 </kw>
 <status status="PASS" start="2025-05-09T12:34:03.329102" elapsed="2.444958"/>
@@ -269,6 +391,145 @@
 <status status="PASS" start="2025-05-09T12:33:52.516560" elapsed="13.257500"/>
 </test>
 <status status="PASS" start="2025-05-09T12:33:52.097721" elapsed="13.677888"/>
+=======
+<status status="PASS" start="2025-05-08T14:42:53.577870" elapsed="6.011224"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:53.576666" elapsed="6.012858"/>
+</kw>
+<tag>HappyPath</tag>
+<status status="PASS" start="2025-05-08T14:42:24.429554" elapsed="35.160438"/>
+</test>
+<test id="s1-s1-t2" name="Connexion Avec Mot De Passe Incorrect" line="16">
+<kw name="Ouvrir Navigateur" owner="common_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:42:59.596628" level="INFO">Opening browser 'chrome' to base url 'https://www.cdiscount.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-08T14:42:59.596394" elapsed="6.671995"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-08T14:43:06.272519" elapsed="0.039965"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:59.596033" elapsed="6.717187"/>
+</kw>
+<kw name="Aller Jusqu'à Saisie Mot De Passe" owner="login_page">
+<kw name="Accepter Les Cookies Si Présent" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ACCEPTER_COOKIES_BUTTON}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-08T14:43:06.315372" elapsed="2.711558"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:43:09.028486" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Accepter') or contains(text(), 'J’accepte')]'.</msg>
+<arg>${ACCEPTER_COOKIES_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T14:43:09.027770" elapsed="0.664112"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:43:06.315090" elapsed="3.381135"/>
+</kw>
+<kw name="Cliquer Sur Connectez Vous" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CONNECTEZ_VOUS_LINK}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-08T14:43:09.698190" elapsed="4.474614"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:43:14.174303" level="INFO">Clicking element 'xpath=//div[@class='c-access__compte js-access__compte']/a'.</msg>
+<arg>${CONNECTEZ_VOUS_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T14:43:14.173635" elapsed="4.072272"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:43:09.697154" elapsed="8.552284"/>
+</kw>
+<kw name="Attendre Redirection Page Login" owner="login_page">
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>/Account/LoginLight.html</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-05-08T14:43:18.251459" elapsed="0.023120"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:43:18.250394" elapsed="0.024876"/>
+</kw>
+<kw name="Saisir Email Et Continuer" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-08T14:43:18.276957" elapsed="0.052235"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:43:18.330928" level="INFO">Typing text 'douasmaa03@gmail.com' into text field 'id=ValidateEmailViewData_ValidateEmailFormData_Email'.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T14:43:18.330074" elapsed="0.377815"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:43:18.714376" level="INFO">Clicking element 'xpath=//input[@data-seln="validateEmail"]'.</msg>
+<arg>${VALIDATE_EMAIL_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T14:43:18.713641" elapsed="1.816975"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PASSWORD_INPUT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-08T14:43:20.539766" elapsed="0.128570"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:43:18.276005" elapsed="2.393053"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:43:06.314656" elapsed="14.355128"/>
+</kw>
+<kw name="Saisir Mot De Passe Incorrect" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:43:20.673712" level="INFO">Typing text 'mauvaisMotDePasse123' into text field 'id=CustomerLogin_CustomerLoginFormData_Password'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${MAUVAIS_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T14:43:20.672856" elapsed="2.138273"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:43:22.815408" level="INFO">Clicking element 'xpath=//input[@value="Se connecter"]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T14:43:22.814617" elapsed="1.633607"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:43:20.671898" elapsed="3.780148"/>
+</kw>
+<kw name="Verifier Message Erreur Connexion" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_MESSAGE}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-08T14:43:24.460064" elapsed="0.140924"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:43:24.603715" level="INFO">Verifying element 'xpath=//div[contains(@class, 'c-alert__content')]' contains exact text 'Le mot de passe ne correspond pas à l'adresse email que vous avez indiquée. Veuillez en saisir un nouveau.'.</msg>
+<arg>${ERROR_MESSAGE}</arg>
+<arg>Le mot de passe ne correspond pas à l'adresse email que vous avez indiquée. Veuillez en saisir un nouveau.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-08T14:43:24.602475" elapsed="0.158948"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:43:24.459078" elapsed="0.305423"/>
+</kw>
+<kw name="Fermer Navigateur" owner="common_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-08T14:43:24.768328" elapsed="6.532665"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:43:24.767347" elapsed="6.534015"/>
+</kw>
+<tag>Negative</tag>
+<status status="PASS" start="2025-05-08T14:42:59.595306" elapsed="31.706496"/>
+</test>
+<status status="PASS" start="2025-05-08T14:42:23.705601" elapsed="67.603635"/>
+</suite>
+<status status="PASS" start="2025-05-08T14:42:23.688771" elapsed="67.635663"/>
+>>>>>>> 1eb997fdc6fc8ba5e1a4c08fc7ddfd7ef82f2bab
 </suite>
 <statistics>
 <total>
@@ -278,7 +539,12 @@
 <stat pass="1" fail="0" skip="0">Search</stat>
 </tag>
 <suite>
+<<<<<<< HEAD
 <stat name="searchTests" id="s1" pass="1" fail="0" skip="0">searchTests</stat>
+=======
+<stat name="TestCases" id="s1" pass="2" fail="0" skip="0">TestCases</stat>
+<stat name="connexionUser" id="s1-s1" pass="2" fail="0" skip="0">TestCases.connexionUser</stat>
+>>>>>>> 1eb997fdc6fc8ba5e1a4c08fc7ddfd7ef82f2bab
 </suite>
 </statistics>
 <errors>
