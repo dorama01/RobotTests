@@ -1,11 +1,17 @@
 *** Settings ***
-Library    SeleniumLibrary
-Resource   ../variables/variables_dev.robot
+Resource   ../resources/locators/login_page.robot
 
 *** Keywords ***
-Ouvrir Navigateur
+Open Browser To Home Page
     Open Browser    ${BASE_URL}    chrome
     Maximize Browser Window
+    Accept Cookies If Present
 
-Fermer Navigateur
+Close the Browser
     Close Browser
+
+Accept Cookies If Present
+    Wait Until Element Is Visible    ${ACCEPT_COOKIES_BUTTON}    timeout=15s
+    Click Button    ${ACCEPT_COOKIES_BUTTON}
+
+
