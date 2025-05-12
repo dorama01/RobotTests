@@ -4,7 +4,6 @@ Resource   ../resources/locators/search_page.robot
 Resource   ../resources/variables/variables_dev.robot
 
 *** Keywords ***
-*** Keywords ***
 Enter Search Term And Submit
     [Arguments]    ${SEARCH_TERM}
     Wait Until Element Is Visible    ${SEARCH_INPUT}    timeout=10s
