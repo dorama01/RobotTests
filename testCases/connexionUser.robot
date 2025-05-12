@@ -2,6 +2,7 @@
 Library    SeleniumLibrary
 Resource   ../resources/keywords/common_keywords.robot
 Resource   ../pageObjects/login_page.robot
+Resource  ../pageObjects/cart_page.robot
 
 Test Setup    Ouvrir Navigateur
 Test Teardown    Fermer Navigateur
