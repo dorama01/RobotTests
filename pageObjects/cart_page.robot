@@ -12,5 +12,4 @@ Hover Over Cart Icon
 
 Verify Empty Cart
    Wait Until Element Is Visible    ${CART_EMPTY_MESSAGE}   timeout=15s
-
-    Element Should Not Be Visible    ${CART_ITEM}
+   Element Should Not Be Visible    ${CART_ITEM}
