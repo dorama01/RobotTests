@@ -1,0 +1,13 @@
+1746720107142	geckodriver	INFO	Listening on 127.0.0.1:53803
+1746720110283	mozrunner::runner	INFO	Running command: "C:\\Users\\Hanane.BEN-AZIZE\\.cache\\selenium\\firefox\\win64\\138.0.1\\firefox.exe" "--marionette" "--remo ... emote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\HANANE~1.BEN\\AppData\\Local\\Temp\\rust_mozprofileY3DXgv"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1746720126688	Marionette	INFO	Marionette enabled
+1746720128692	Marionette	INFO	Listening on port 53952
+WebDriver BiDi listening on ws://127.0.0.1:53804
+Read port: 53952
+1746720129223	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderThread::InitDeviceTask is slow: 3832
+[GFX1-]: Calling WaitFlushedEvent::Run: is delayed: 2395
+JavaScript error: , line 0: NotFoundError: Could not move `C:\Users\HANANE~1.BEN\AppData\Local\Temp\rust_mozprofileY3DXgv\bookmarkbackups\bookmarks-2025-05-08.jsonlz4' to `C:\Users\HANANE~1.BEN\AppData\Local\Temp\rust_mozprofileY3DXgv\bookmarkbackups\bookmarks-2025-05-08_10_y-f4Ja6-zpaqu1NJwMJ5KSiOrkuIC8ZvjVI8sbZIvWw=.jsonlz4': source file does not exist (NS_ERROR_FILE_NOT_FOUND)
