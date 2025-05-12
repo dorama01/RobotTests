@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-12T09:36:22.166191" rpa="false" schemaversion="5">
 <suite id="s1" name="cartTests" source="C:\Users\Hanane.BEN-AZIZE\Downloads\robotTests\TestCases\cartTests.robot">
 <test id="s1-t1" name="Show Empty Cart" line="13">
+=======
+<<<<<<< HEAD
+<robot generator="Robot 7.2.2 (Python 3.11.0 on win32)" generated="2025-05-09T12:33:52.095498" rpa="false" schemaversion="5">
+<suite id="s1" name="searchTests" source="C:\Users\Douae.MAARAD\OneDrive - Akkodis\Desktop\RobotTests\testCases\searchTests.robot">
+<test id="s1-t1" name="Search Products By Keyword" line="11">
+<kw name="Open Browser To Home Page" owner="common_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-09T12:33:52.518528" level="INFO">Opening browser 'chrome' to base url 'https://www.cdiscount.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-09T12:33:52.518528" elapsed="6.441721"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-09T12:33:58.960249" elapsed="0.033886"/>
+</kw>
+<kw name="Accept Cookies If Present" owner="common_keywords">
+=======
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-08T14:42:23.587063" rpa="false" schemaversion="5">
+<suite id="s1" name="TestCases" source="C:\Users\Hanane.BEN-AZIZE\Downloads\robotTests\TestCases">
+<suite id="s1-s1" name="connexionUser" source="C:\Users\Hanane.BEN-AZIZE\Downloads\robotTests\TestCases\connexionUser.robot">
+<test id="s1-s1-t1" name="Connexion Avec Credentials Valides" line="10">
+>>>>>>> bb83f98fe4a66ea0d66fd8d79928aee5ff45c745
 <kw name="Ouvrir Navigateur" owner="common_keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
 <msg time="2025-05-12T09:36:23.692611" level="INFO">Opening browser 'chrome' to base url 'https://www.cdiscount.com/'.</msg>
@@ -17,11 +42,27 @@
 <status status="PASS" start="2025-05-12T09:36:23.689898" elapsed="8.527439"/>
 </kw>
 <kw name="Accepter Les Cookies Si Présent" owner="login_page">
+>>>>>>> 1eb997fdc6fc8ba5e1a4c08fc7ddfd7ef82f2bab
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${ACCEPTER_COOKIES_BUTTON}</arg>
+<arg>${ACCEPT_COOKIES_BUTTON}</arg>
 <arg>timeout=15s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
+<<<<<<< HEAD
 <status status="PASS" start="2025-05-12T09:36:32.233262" elapsed="3.942086"/>
+=======
+<<<<<<< HEAD
+<status status="PASS" start="2025-05-09T12:33:58.995147" elapsed="0.371498"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-09T12:33:59.367643" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Accepter') or contains(text(), 'J’accepte')]'.</msg>
+<arg>${ACCEPT_COOKIES_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T12:33:59.366645" elapsed="0.202439"/>
+</kw>
+<status status="PASS" start="2025-05-09T12:33:58.994135" elapsed="0.575948"/>
+=======
+<status status="PASS" start="2025-05-08T14:42:32.139592" elapsed="0.795897"/>
+>>>>>>> bb83f98fe4a66ea0d66fd8d79928aee5ff45c745
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
 <msg time="2025-05-12T09:36:36.177168" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Accepter') or contains(text(), 'J’accepte')]'.</msg>
@@ -29,11 +70,371 @@
 <doc>Clicks the button identified by ``locator``.</doc>
 <status status="PASS" start="2025-05-12T09:36:36.176429" elapsed="1.030819"/>
 </kw>
+<<<<<<< HEAD
 <status status="PASS" start="2025-05-12T09:36:32.231631" elapsed="4.979559"/>
 </kw>
 <kw name="Hover Over Cart Icon" owner="cart_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${BASKET_LINK}</arg>
+=======
+<status status="PASS" start="2025-05-08T14:42:32.138856" elapsed="1.416990"/>
+>>>>>>> 1eb997fdc6fc8ba5e1a4c08fc7ddfd7ef82f2bab
+</kw>
+<status status="PASS" start="2025-05-09T12:33:52.517531" elapsed="7.052552"/>
+</kw>
+<kw name="Enter Search Term And Submit" owner="search_page_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_INPUT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<<<<<<< HEAD
+<status status="PASS" start="2025-05-09T12:33:59.571102" elapsed="0.028711"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T12:33:59.600821" level="INFO">Typing text 'pc' into text field 'id=search'.</msg>
+<arg>${SEARCH_INPUT}</arg>
+<arg>${SEARCH_TERM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T12:33:59.599813" elapsed="0.084337"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-05-09T12:33:59.685146" level="INFO">Sending key(s) ('RETURN',) to id=search element.</msg>
+<msg time="2025-05-09T12:33:59.979364" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-05-09T12:33:59.979364" level="INFO">Releasing special key RETURN.</msg>
+<arg>${SEARCH_INPUT}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-05-09T12:33:59.684150" elapsed="3.395899"/>
+=======
+<status status="PASS" start="2025-05-08T14:42:33.557585" elapsed="4.380636"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:42:37.939785" level="INFO">Clicking element 'xpath=//div[@class='c-access__compte js-access__compte']/a'.</msg>
+<arg>${CONNECTEZ_VOUS_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T14:42:37.939078" elapsed="4.656981"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:33.556716" elapsed="9.043513"/>
+</kw>
+<kw name="Attendre Redirection Page Login" owner="login_page">
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>/Account/LoginLight.html</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-05-08T14:42:42.604976" elapsed="0.022080"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:42.603293" elapsed="0.024487"/>
+</kw>
+<kw name="Saisir Email Et Continuer" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-08T14:42:42.629536" elapsed="0.062998"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:42:42.694018" level="INFO">Typing text 'douasmaa03@gmail.com' into text field 'id=ValidateEmailViewData_ValidateEmailFormData_Email'.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T14:42:42.693334" elapsed="0.338334"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:42:43.037482" level="INFO">Clicking element 'xpath=//input[@data-seln="validateEmail"]'.</msg>
+<arg>${VALIDATE_EMAIL_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T14:42:43.036320" elapsed="1.607687"/>
+>>>>>>> 1eb997fdc6fc8ba5e1a4c08fc7ddfd7ef82f2bab
+</kw>
+<arg>${SEARCH_TERMS}</arg>
+<status status="PASS" start="2025-05-09T12:33:59.570083" elapsed="3.509966"/>
+</kw>
+<kw name="Verify First Results Contain Search Term" owner="search_page_keywords">
+<kw name="Get Product Titles" owner="search_page_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PRODUCT_TITLES}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<<<<<<< HEAD
+<status status="PASS" start="2025-05-09T12:34:03.081047" elapsed="0.110626"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-09T12:34:03.205627" level="INFO">${products} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="e75aef1a4d008e9661a388aea8b07ebf", element="f.910C43BD30509D619EB9C1FDA346EF8B.d.2DEAF77EC47280CAA0D91275944382FB.e.749")&gt;, &lt;selenium.webdri...</msg>
+<var>${products}</var>
+<arg>${PRODUCT_TITLES}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.191673" elapsed="0.013954"/>
+</kw>
+<return>
+<value>${products}</value>
+<status status="PASS" start="2025-05-09T12:34:03.205627" elapsed="0.000996"/>
+</return>
+<msg time="2025-05-09T12:34:03.206623" level="INFO">${titles} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="e75aef1a4d008e9661a388aea8b07ebf", element="f.910C43BD30509D619EB9C1FDA346EF8B.d.2DEAF77EC47280CAA0D91275944382FB.e.749")&gt;, &lt;selenium.webdri...</msg>
+<var>${titles}</var>
+<status status="PASS" start="2025-05-09T12:34:03.081047" elapsed="0.125576"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T12:34:03.238516" level="INFO">${text} = PC Portable Chromebook Plus LENOVO IdeaPad 3 14IAN8 | Chrome OS - 14'' FHD - Core i3-N305 - RAM 8Go - Stockage 128Go - AZERTY</msg>
+<var>${text}</var>
+<arg>${titles}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.206623" elapsed="0.031893"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${text.lower()}</arg>
+<arg>${search_term.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.238516" elapsed="0.001005"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2025-05-09T12:34:03.206623" elapsed="0.032898"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T12:34:03.259455" level="INFO">${text} = BEASTCOM Q3 Essential Gaming, PC Gamer, AMD Ryzen 3 4X4.00GHz, 4K Vega 8, 16Go RAM, 1To SSD,WiFi, Win11</msg>
+<var>${text}</var>
+<arg>${titles}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.239521" elapsed="0.019934"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${text.lower()}</arg>
+<arg>${search_term.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.259455" elapsed="0.000000"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2025-05-09T12:34:03.239521" elapsed="0.020921"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T12:34:03.264612" level="INFO">${text} = PC HP Compaq Pro 6300 SFF Ecran 22" G630 RAM 16Go Disque Dur 2To Windows 10 Wifi</msg>
+<var>${text}</var>
+<arg>${titles}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.260442" elapsed="0.004170"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${text.lower()}</arg>
+<arg>${search_term.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.264612" elapsed="0.000997"/>
+</kw>
+<var name="${index}">2</var>
+<status status="PASS" start="2025-05-09T12:34:03.260442" elapsed="0.005167"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T12:34:03.272477" level="INFO">${text} = PC Tout-en-un HP 22-dg0000nf - Windows 11 - 21,5" FHD - Intel N100 - RAM 8Go - Stockage 256Go SSD - Clavier &amp; souris filaires</msg>
+<var>${text}</var>
+<arg>${titles}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.265609" elapsed="0.006868"/>
+=======
+<status status="PASS" start="2025-05-08T14:42:44.647591" elapsed="0.090953"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:42.628633" elapsed="2.110558"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:32.137676" elapsed="12.602040"/>
+</kw>
+<kw name="Saisir Mot De Passe Et Se Connecter" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PASSWORD_INPUT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-08T14:42:44.741835" elapsed="0.042943"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:42:44.787209" level="INFO">Typing text 'QuNRm37!nbjH7N!' into text field 'id=CustomerLogin_CustomerLoginFormData_Password'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T14:42:44.785843" elapsed="2.006967"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:42:46.797096" level="INFO">Clicking element 'xpath=//input[@value="Se connecter"]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-08T14:42:46.796365" elapsed="6.559715"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:44.740890" elapsed="8.619068"/>
+</kw>
+<kw name="Verifier Connexion Reussie" owner="login_page">
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${ACCOUNT_HOME_URL}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-05-08T14:42:53.374118" elapsed="0.096500"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:42:53.571306" level="INFO">Current location is 'https://clients.cdiscount.com/Account/Home.html'.</msg>
+<arg>${ACCOUNT_HOME_URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-08T14:42:53.471426" elapsed="0.100150"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:53.373064" elapsed="0.202012"/>
+>>>>>>> 1eb997fdc6fc8ba5e1a4c08fc7ddfd7ef82f2bab
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${text.lower()}</arg>
+<arg>${search_term.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.272477" elapsed="0.001070"/>
+</kw>
+<var name="${index}">3</var>
+<status status="PASS" start="2025-05-09T12:34:03.265609" elapsed="0.007938"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T12:34:03.278503" level="INFO">${text} = PC Portable Notebook - THOMSON - TH14C128 - Ecran 14’’ HD - Celeron N3350 - RAM 4Go - SSD 128Go - W10s - Silver</msg>
+<var>${text}</var>
+<arg>${titles}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.273547" elapsed="0.004956"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${text.lower()}</arg>
+<arg>${search_term.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.278503" elapsed="0.001028"/>
+</kw>
+<var name="${index}">4</var>
+<status status="PASS" start="2025-05-09T12:34:03.273547" elapsed="0.005984"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T12:34:03.287430" level="INFO">${text} = PC HP Compaq Pro 6300 SFF Ecran 22" G630 RAM 16Go Disque Dur 2To Windows 10 Wifi</msg>
+<var>${text}</var>
+<arg>${titles}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.279531" elapsed="0.007899"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${text.lower()}</arg>
+<arg>${search_term.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.287430" elapsed="0.000996"/>
+</kw>
+<var name="${index}">5</var>
+<status status="PASS" start="2025-05-09T12:34:03.279531" elapsed="0.008895"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T12:34:03.297396" level="INFO">${text} = PC portable,Intel Celeron N5095(4C/4T,Jusqu'à 2,9 GHz),24Go RAM DDR4 512Go SSD,Windows 11PRO,WiFi5,Ordinateur Portable,AZERTY</msg>
+<var>${text}</var>
+<arg>${titles}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.288426" elapsed="0.008970"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${text.lower()}</arg>
+<arg>${search_term.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.297396" elapsed="0.000997"/>
+</kw>
+<var name="${index}">6</var>
+<status status="PASS" start="2025-05-09T12:34:03.288426" elapsed="0.009967"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T12:34:03.309169" level="INFO">${text} = PC Portable HP 17-cn0020nf - Windows 11 - 17,3" HD+ - Celeron N4120 - RAM 4Go - Stockage 128Go SSD</msg>
+<var>${text}</var>
+<arg>${titles}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.299390" elapsed="0.009779"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${text.lower()}</arg>
+<arg>${search_term.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.309169" elapsed="0.000997"/>
+</kw>
+<var name="${index}">7</var>
+<status status="PASS" start="2025-05-09T12:34:03.298393" elapsed="0.011773"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T12:34:03.318140" level="INFO">${text} = PC Portable Acer - Chromebook CBOA314-1H-C286 - Chrome OS - 14" FHD - Intel Celeron N4500 - RAM 4Go - 128 Go eMMC - Autonomie 10,5h</msg>
+<var>${text}</var>
+<arg>${titles}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.310166" elapsed="0.007974"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${text.lower()}</arg>
+<arg>${search_term.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.318140" elapsed="0.000996"/>
+</kw>
+<var name="${index}">8</var>
+<status status="PASS" start="2025-05-09T12:34:03.310166" elapsed="0.008970"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-09T12:34:03.327110" level="INFO">${text} = PC portable,Intel Celeron N5095(4C/4T,Jusqu'à 2,9 GHz),24Go RAM DDR4 512Go SSD,Windows 11PRO,WiFi5,Ordinateur Portable,AZERTY</msg>
+<var>${text}</var>
+<arg>${titles}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.319136" elapsed="0.007974"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${text.lower()}</arg>
+<arg>${search_term.lower()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-05-09T12:34:03.327110" elapsed="0.001019"/>
+</kw>
+<var name="${index}">9</var>
+<status status="PASS" start="2025-05-09T12:34:03.319136" elapsed="0.008993"/>
+</iter>
+<var>${index}</var>
+<value>${number_of_results}</value>
+<status status="PASS" start="2025-05-09T12:34:03.206623" elapsed="0.122479"/>
+</for>
+<arg>${SEARCH_TERMS}</arg>
+<status status="PASS" start="2025-05-09T12:34:03.080049" elapsed="0.249053"/>
+</kw>
+<kw name="Close the Browser" owner="common_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<<<<<<< HEAD
+<status status="PASS" start="2025-05-09T12:34:03.329102" elapsed="2.444958"/>
+</kw>
+<status status="PASS" start="2025-05-09T12:34:03.329102" elapsed="2.444958"/>
+</kw>
+<tag>Search</tag>
+<status status="PASS" start="2025-05-09T12:33:52.516560" elapsed="13.257500"/>
+</test>
+<status status="PASS" start="2025-05-09T12:33:52.097721" elapsed="13.677888"/>
+=======
+<status status="PASS" start="2025-05-08T14:42:53.577870" elapsed="6.011224"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:53.576666" elapsed="6.012858"/>
+</kw>
+<tag>HappyPath</tag>
+<status status="PASS" start="2025-05-08T14:42:24.429554" elapsed="35.160438"/>
+</test>
+<test id="s1-s1-t2" name="Connexion Avec Mot De Passe Incorrect" line="16">
+<kw name="Ouvrir Navigateur" owner="common_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-08T14:42:59.596628" level="INFO">Opening browser 'chrome' to base url 'https://www.cdiscount.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-08T14:42:59.596394" elapsed="6.671995"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-08T14:43:06.272519" elapsed="0.039965"/>
+</kw>
+<status status="PASS" start="2025-05-08T14:42:59.596033" elapsed="6.717187"/>
+</kw>
+<kw name="Aller Jusqu'à Saisie Mot De Passe" owner="login_page">
+<kw name="Accepter Les Cookies Si Présent" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ACCEPTER_COOKIES_BUTTON}</arg>
+>>>>>>> bb83f98fe4a66ea0d66fd8d79928aee5ff45c745
 <arg>timeout=15s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
 <status status="PASS" start="2025-05-12T09:36:37.214069" elapsed="4.730200"/>
@@ -78,19 +479,38 @@
 <tag>Empty</tag>
 <status status="PASS" start="2025-05-12T09:36:23.687802" elapsed="24.598250"/>
 </test>
+<<<<<<< HEAD
 <doc>Test suite for shopping cart functionality.</doc>
 <status status="PASS" start="2025-05-12T09:36:22.409672" elapsed="25.898390"/>
+=======
+<status status="PASS" start="2025-05-08T14:42:23.705601" elapsed="67.603635"/>
+</suite>
+<status status="PASS" start="2025-05-08T14:42:23.688771" elapsed="67.635663"/>
+>>>>>>> 1eb997fdc6fc8ba5e1a4c08fc7ddfd7ef82f2bab
+>>>>>>> bb83f98fe4a66ea0d66fd8d79928aee5ff45c745
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<<<<<<< HEAD
 <stat pass="1" fail="0" skip="0">Cart</stat>
 <stat pass="1" fail="0" skip="0">Empty</stat>
 </tag>
 <suite>
 <stat name="cartTests" id="s1" pass="1" fail="0" skip="0">cartTests</stat>
+=======
+<stat pass="1" fail="0" skip="0">Search</stat>
+</tag>
+<suite>
+<<<<<<< HEAD
+<stat name="searchTests" id="s1" pass="1" fail="0" skip="0">searchTests</stat>
+=======
+<stat name="TestCases" id="s1" pass="2" fail="0" skip="0">TestCases</stat>
+<stat name="connexionUser" id="s1-s1" pass="2" fail="0" skip="0">TestCases.connexionUser</stat>
+>>>>>>> 1eb997fdc6fc8ba5e1a4c08fc7ddfd7ef82f2bab
+>>>>>>> bb83f98fe4a66ea0d66fd8d79928aee5ff45c745
 </suite>
 </statistics>
 <errors>

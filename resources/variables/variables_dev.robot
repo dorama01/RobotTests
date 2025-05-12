@@ -4,4 +4,5 @@ ${LOGIN_URL}          https://order.cdiscount.com/Account/LoginLight.html
 ${ACCOUNT_HOME_URL}   https://clients.cdiscount.com/Account/Home.html
 ${EMAIL}              douasmaa03@gmail.com
 ${PASSWORD}           QuNRm37!nbjH7N!
-${MAUVAIS_PASSWORD}   mauvaisMotDePasse123
+${WRONG_PASSWORD}     wrongPassword123
+${SEARCH_TERMS}       pc   
