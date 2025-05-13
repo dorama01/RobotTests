@@ -6,3 +6,4 @@ ${EMAIL}              douasmaa03@gmail.com
 ${PASSWORD}           QuNRm37!nbjH7N!
 ${WRONG_PASSWORD}     wrongPassword123
 ${SEARCH_TERMS}       pc   
+${PRODUCT_SKU}        83BN002PFR
