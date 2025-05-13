@@ -14,5 +14,5 @@ Close the Browser
     Close Browser
 
 Accept Cookies If Present
-    Wait Until Element Is Visible    ${ACCEPT_COOKIES_BUTTON}    timeout=15s
-    Click Button    ${ACCEPT_COOKIES_BUTTON}
+    ${cookie_present}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${ACCEPT_COOKIES_BUTTON}    5s
+    Run Keyword If    ${cookie_present}    Click Button    ${ACCEPT_COOKIES_BUTTON}

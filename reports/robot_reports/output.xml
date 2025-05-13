@@ -1,149 +1,3030 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.11.0 on win32)" generated="2025-05-13T10:09:38.717456" rpa="false" schemaversion="5">
-<suite id="s1" name="productDetailsTests" source="C:\Users\Douae.MAARAD\OneDrive - Akkodis\Desktop\RobotTests\testCases\productDetailsTests.robot">
-<test id="s1-t1" name="Verify Product Details Presence" line="12">
+<robot generator="Robot 7.2.2 (Python 3.11.0 on win32)" generated="2025-05-13T16:01:18.783029" rpa="false" schemaversion="5">
+<suite id="s1" name="accessibilityTests" source="C:\Users\Douae.MAARAD\OneDrive - Akkodis\Desktop\RobotTests\testCases\accessibilityTests.robot">
+<test id="s1-t1" name="Test Keyboard Navigation" line="11">
 <kw name="Open Browser To Home Page" owner="common_keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-13T10:09:39.171490" level="INFO">Opening browser 'chrome' to base url 'https://www.cdiscount.com/'.</msg>
+<msg time="2025-05-13T16:01:19.042824" level="INFO">Opening browser 'chrome' to base url 'https://www.cdiscount.com/'.</msg>
 <arg>${BASE_URL}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-13T10:09:39.171490" elapsed="5.921419"/>
+<status status="PASS" start="2025-05-13T16:01:19.042824" elapsed="6.555260"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-13T10:09:45.092909" elapsed="0.040390"/>
+<status status="PASS" start="2025-05-13T16:01:25.598084" elapsed="0.040864"/>
 </kw>
 <kw name="Accept Cookies If Present" owner="common_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${ACCEPT_COOKIES_BUTTON}</arg>
-<arg>timeout=15s</arg>
+<arg>5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-13T10:09:45.133299" elapsed="0.400112"/>
+<status status="PASS" start="2025-05-13T16:01:25.639943" elapsed="0.766061"/>
 </kw>
+<msg time="2025-05-13T16:01:26.406004" level="INFO">${cookie_present} = True</msg>
+<var>${cookie_present}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${ACCEPT_COOKIES_BUTTON}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-13T16:01:25.639943" elapsed="0.766061"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-13T10:09:45.534407" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Accepter') or contains(text(), 'J’accepte')]'.</msg>
+<msg time="2025-05-13T16:01:26.407013" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Accepter') or contains(text(), 'J’accepte')]'.</msg>
 <arg>${ACCEPT_COOKIES_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-13T10:09:45.533411" elapsed="0.198685"/>
+<status status="PASS" start="2025-05-13T16:01:26.407013" elapsed="0.170477"/>
 </kw>
-<status status="PASS" start="2025-05-13T10:09:45.133299" elapsed="0.598797"/>
+<arg>${cookie_present}</arg>
+<arg>Click Button</arg>
+<arg>${ACCEPT_COOKIES_BUTTON}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-13T16:01:26.407013" elapsed="0.171474"/>
 </kw>
-<status status="PASS" start="2025-05-13T10:09:39.171490" elapsed="6.560606"/>
+<status status="PASS" start="2025-05-13T16:01:25.639943" elapsed="0.938544"/>
 </kw>
-<kw name="Enter Search Term And Submit" owner="search_page_keywords">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${SEARCH_INPUT}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-13T10:09:45.732096" elapsed="0.037346"/>
+<status status="PASS" start="2025-05-13T16:01:19.041752" elapsed="7.536735"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-13T10:09:45.770439" level="INFO">Typing text 'pc' into text field 'id=search'.</msg>
-<arg>${SEARCH_INPUT}</arg>
-<arg>${SEARCH_TERM}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-13T10:09:45.769442" elapsed="0.069059"/>
-</kw>
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2025-05-13T10:09:45.839032" level="INFO">Sending key(s) ('RETURN',) to id=search element.</msg>
-<msg time="2025-05-13T10:09:46.109163" level="INFO">Pressing special key RETURN to element.</msg>
-<msg time="2025-05-13T10:09:46.109163" level="INFO">Releasing special key RETURN.</msg>
-<arg>${SEARCH_INPUT}</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2025-05-13T10:09:45.838501" elapsed="5.579433"/>
-</kw>
-<arg>${SEARCH_TERMS}</arg>
-<status status="PASS" start="2025-05-13T10:09:45.732096" elapsed="5.685838"/>
-</kw>
-<kw name="Click On First Product" owner="product_details_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${FIRST_PRODUCT_LINK}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-13T10:09:51.417934" elapsed="0.159214"/>
-</kw>
+<kw name="Navigate With Keyboard" owner="page_accessibilite">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-13T10:09:51.577148" level="INFO">Clicking element 'xpath=//li[@data-sku='83BN002PFR']//a[contains(@class, 'o-card__link')]'.</msg>
-<arg>${FIRST_PRODUCT_LINK}</arg>
+<msg time="2025-05-13T16:01:26.578487" level="INFO">Clicking element 'id=search'.</msg>
+<arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-13T10:09:51.577148" elapsed="3.275513"/>
+<status status="PASS" start="2025-05-13T16:01:26.578487" elapsed="0.063466"/>
 </kw>
-<doc>Clique sur le premier produit avec SKU donné.</doc>
-<status status="PASS" start="2025-05-13T10:09:51.417934" elapsed="3.434727"/>
+<kw name="Press Key" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>\\09</arg>
+<doc>Simulates user pressing key on element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:26.641953" elapsed="0.035881"/>
 </kw>
-<kw name="Verify Product Image Is Visible" owner="product_details_page">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T16:01:27.179259" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T16:01:26.677834" elapsed="0.501425"/>
+</kw>
+<arg>${SEARCH_INPUT}</arg>
+<status status="PASS" start="2025-05-13T16:01:26.578487" elapsed="0.600772"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Press Key" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>\\09</arg>
+<doc>Simulates user pressing key on element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:27.180257" elapsed="0.054814"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T16:01:27.735893" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T16:01:27.235071" elapsed="0.500822"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-05-13T16:01:27.180257" elapsed="0.555636"/>
+</iter>
+<iter>
+<kw name="Press Key" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>\\09</arg>
+<doc>Simulates user pressing key on element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:27.735893" elapsed="0.231368"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T16:01:28.467708" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T16:01:27.967261" elapsed="0.500447"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-05-13T16:01:27.735893" elapsed="0.731815"/>
+</iter>
+<iter>
+<kw name="Press Key" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>\\09</arg>
+<doc>Simulates user pressing key on element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:28.467708" elapsed="0.050755"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T16:01:29.018870" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T16:01:28.518463" elapsed="0.500407"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2025-05-13T16:01:28.467708" elapsed="0.551162"/>
+</iter>
+<iter>
+<kw name="Press Key" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>\\09</arg>
+<doc>Simulates user pressing key on element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:29.018870" elapsed="0.041846"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T16:01:29.562301" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T16:01:29.061713" elapsed="0.500588"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2025-05-13T16:01:29.018870" elapsed="0.543431"/>
+</iter>
+<iter>
+<kw name="Press Key" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>\\09</arg>
+<doc>Simulates user pressing key on element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:29.562301" elapsed="0.042857"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T16:01:30.105654" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T16:01:29.605158" elapsed="0.500496"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2025-05-13T16:01:29.562301" elapsed="0.543353"/>
+</iter>
+<iter>
+<kw name="Press Key" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>\\09</arg>
+<doc>Simulates user pressing key on element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:30.105654" elapsed="0.059841"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T16:01:30.666294" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T16:01:30.165495" elapsed="0.500799"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2025-05-13T16:01:30.105654" elapsed="0.560640"/>
+</iter>
+<iter>
+<kw name="Press Key" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>\\09</arg>
+<doc>Simulates user pressing key on element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:30.666294" elapsed="0.036870"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T16:01:31.203441" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T16:01:30.703164" elapsed="0.500277"/>
+</kw>
+<var name="${i}">6</var>
+<status status="PASS" start="2025-05-13T16:01:30.666294" elapsed="0.537147"/>
+</iter>
+<iter>
+<kw name="Press Key" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>\\09</arg>
+<doc>Simulates user pressing key on element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:31.203441" elapsed="0.043851"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T16:01:31.747773" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T16:01:31.247292" elapsed="0.500481"/>
+</kw>
+<var name="${i}">7</var>
+<status status="PASS" start="2025-05-13T16:01:31.203441" elapsed="0.544332"/>
+</iter>
+<iter>
+<kw name="Press Key" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>\\09</arg>
+<doc>Simulates user pressing key on element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:31.747773" elapsed="0.042992"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-13T16:01:32.291970" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-13T16:01:31.790765" elapsed="0.501205"/>
+</kw>
+<var name="${i}">8</var>
+<status status="PASS" start="2025-05-13T16:01:31.747773" elapsed="0.544197"/>
+</iter>
+<var>${i}</var>
+<value>9</value>
+<status status="PASS" start="2025-05-13T16:01:27.179259" elapsed="5.112711"/>
+</for>
+<kw name="Close the Browser" owner="common_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T16:01:32.292967" elapsed="2.584112"/>
+</kw>
+<status status="PASS" start="2025-05-13T16:01:32.291970" elapsed="2.586158"/>
+</kw>
+<status status="PASS" start="2025-05-13T16:01:19.041752" elapsed="15.836376"/>
+</test>
+<test id="s1-t2" name="Test Alt Attributes On Images" line="18">
+<kw name="Open Browser To Home Page" owner="common_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:34.883128" level="INFO">Opening browser 'chrome' to base url 'https://www.cdiscount.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-13T16:01:34.883128" elapsed="5.369641"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-13T16:01:40.252769" elapsed="0.033885"/>
+</kw>
+<kw name="Accept Cookies If Present" owner="common_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${PRODUCT_IMAGE}</arg>
-<arg>timeout=10s</arg>
+<arg>${ACCEPT_COOKIES_BUTTON}</arg>
+<arg>5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-13T10:09:54.853658" elapsed="0.041436"/>
+<status status="PASS" start="2025-05-13T16:01:40.287650" elapsed="0.584272"/>
 </kw>
-<doc>Vérifie que l'image principale est présente.</doc>
-<status status="PASS" start="2025-05-13T10:09:54.852661" elapsed="0.042433"/>
+<msg time="2025-05-13T16:01:40.871922" level="INFO">${cookie_present} = True</msg>
+<var>${cookie_present}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${ACCEPT_COOKIES_BUTTON}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-13T16:01:40.287650" elapsed="0.584272"/>
 </kw>
-<kw name="Verify Product Title Is Visible" owner="product_details_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${PRODUCT_TITLE}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-13T10:09:54.896090" elapsed="0.023348"/>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:40.871922" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Accepter') or contains(text(), 'J’accepte')]'.</msg>
+<arg>${ACCEPT_COOKIES_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:40.871922" elapsed="0.179396"/>
 </kw>
-<doc>Vérifie que le titre du produit est présent.</doc>
-<status status="PASS" start="2025-05-13T10:09:54.896090" elapsed="0.023348"/>
+<arg>${cookie_present}</arg>
+<arg>Click Button</arg>
+<arg>${ACCEPT_COOKIES_BUTTON}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-13T16:01:40.871922" elapsed="0.179396"/>
 </kw>
-<kw name="Verify Product Description Is Visible" owner="product_details_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${PRODUCT_DESCRIPTION}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-13T10:09:54.919438" elapsed="0.025718"/>
+<status status="PASS" start="2025-05-13T16:01:40.286654" elapsed="0.764664"/>
 </kw>
-<doc>Vérifie que la section de description est présente.</doc>
-<status status="PASS" start="2025-05-13T10:09:54.919438" elapsed="0.025718"/>
+<status status="PASS" start="2025-05-13T16:01:34.882127" elapsed="6.169191"/>
 </kw>
-<kw name="Verify Product Price Is Visible" owner="product_details_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${PRODUCT_PRICE}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-13T10:09:54.946188" elapsed="0.023434"/>
+<kw name="Check All Images Have Alt Attribute" owner="page_accessibilite">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.143008" level="INFO">${images} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.80")&gt;, &lt;selenium.webdriv...</msg>
+<var>${images}</var>
+<arg>${ALL_IMAGES_XPATH}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.052315" elapsed="0.090693"/>
 </kw>
-<doc>Vérifie que le prix est affiché.</doc>
-<status status="PASS" start="2025-05-13T10:09:54.946188" elapsed="0.023434"/>
+<for flavor="IN">
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.149986" level="INFO">${alt} = ALERTES canapé</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.143008" elapsed="0.006978"/>
 </kw>
-<kw name="Verify Product Reviews Section Is Visible" owner="product_details_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${PRODUCT_REVIEWS_BUTTON}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-13T10:09:54.970620" elapsed="0.014602"/>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.149986" level="INFO">Length is 14.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.149986" elapsed="0.000000"/>
 </kw>
-<doc>Vérifie que la section Avis est présente.</doc>
-<status status="PASS" start="2025-05-13T10:09:54.970620" elapsed="0.014602"/>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.80")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.143008" elapsed="0.006978"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.155965" level="INFO">${alt} = OP LEGO</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.149986" elapsed="0.006976"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.156962" level="INFO">Length is 7.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.156962" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.30")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.149986" elapsed="0.006976"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.161944" level="INFO">${alt} = ALERTES fago</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.156962" elapsed="0.004982"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.161944" level="INFO">Length is 12.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.161944" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.31")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.156962" elapsed="0.004982"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.166927" level="INFO">${alt} = ALERTES iPhone 13</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.161944" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.166927" level="INFO">Length is 17.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.166927" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.81")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.161944" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.171911" level="INFO">${alt} = ALERTES karcher</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.167924" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.172907" level="INFO">Length is 15.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.172907" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.82")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.166927" elapsed="0.005980"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.176894" level="INFO">${alt} = ALERTES BOSCH</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.172907" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.177891" level="INFO">Length is 13.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.176894" elapsed="0.000997"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.83")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.172907" elapsed="0.004984"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.181877" level="INFO">${alt} = TR tondeuse scheppach</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.177891" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.181877" level="INFO">Length is 21.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.181877" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.84")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.177891" elapsed="0.003986"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.186860" level="INFO">${alt} = ALERTES canapé</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.182873" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.187857" level="INFO">Length is 14.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.186860" elapsed="0.000997"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.85")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.181877" elapsed="0.005980"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.192840" level="INFO">${alt} = OP LEGO</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.187857" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.192840" level="INFO">Length is 7.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.192840" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.86")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.187857" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.197824" level="INFO">${alt} = APPLE iPhone 13 128 Go Pink (2021) - Reconditionné</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.192840" elapsed="0.004984"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.197824" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.197824" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.87")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.192840" elapsed="0.004984"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.202807" level="INFO">${alt} = Réfrigérateur congélateur bas CONTINENTAL EDISON -</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.198820" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.202807" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.202807" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.88")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.198820" elapsed="0.003987"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.207790" level="INFO">${alt} = Barbecue à charbon MIKE - 2 grilles acier chromé -</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.203803" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.207790" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.207790" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.89")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.202807" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.212773" level="INFO">${alt} = Friteuse sans huile FAGOR - Airfryer FG2X4L - Capa</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.208787" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.212773" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.212773" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.90")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.207790" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.217758" level="INFO">${alt} = Console Nintendo Switch 2 • Bleu Clair &amp; Rouge Cla</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.212773" elapsed="0.004985"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.217758" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.217758" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.91")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.212773" elapsed="0.004985"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.221744" level="INFO">${alt} = Tondeuse thermique poussée MP132-40 - 40cm - 131 C</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.218754" elapsed="0.002990"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.222741" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.222741" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.92")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.217758" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.226727" level="INFO">${alt} = Tablette tactile Samsung Galaxy TAB A9+ 128Go Wifi</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.222741" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.226727" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.226727" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.93")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.222741" elapsed="0.003986"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.231710" level="INFO">${alt} = TV HD - CONTINENTAL EDISON - 32“ (81 cm) - 3xHDMI,</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.226727" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.232708" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.231710" elapsed="0.000998"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.94")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.226727" elapsed="0.005981"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.243671" level="INFO">${alt} = TEFAL INGENIO Emotion On Batterie de cuisine 13 p,</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.232708" elapsed="0.011960"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.244668" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.244668" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.95")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.232708" elapsed="0.011960"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.249650" level="INFO">${alt} = YEE GOO - Trottinette électrique Pliable - Roues 8</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.244668" elapsed="0.004982"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.250646" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.250646" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.96")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.244668" elapsed="0.005978"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.301475" level="INFO">${alt} = Manette sans fil DualSense™ - Noire I PS5 et PC</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.250646" elapsed="0.050829"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.301475" level="INFO">Length is 47.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.301475" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.97")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.250646" elapsed="0.050829"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.307456" level="INFO">${alt} = SSD Interne - SAMSUNG - 990 EVO Plus 2 To - NVMe M</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.301475" elapsed="0.005981"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.308452" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.307456" elapsed="0.000996"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.98")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.301475" elapsed="0.006977"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.313434" level="INFO">${alt} = Lave-vaisselle pose libre OCEANIC OCEALV1247EWP - </msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.308452" elapsed="0.004982"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.313434" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.313434" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.99")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.308452" elapsed="0.004982"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.318419" level="INFO">${alt} = Lave-linge hublot CONTINENTAL EDISON CELL10140S2 -</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.314431" elapsed="0.003988"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.319416" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.318419" elapsed="0.000997"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.100")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.313434" elapsed="0.005982"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.324399" level="INFO">${alt} = Ensemble matelas, couette et oreillers - Mémoire d</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.319416" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.324399" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.324399" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.101")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.319416" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.329382" level="INFO">${alt} = Débroussailleuse thermique 4 en 1 SCHEPPACH 52CC (</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.325395" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.329382" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.329382" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.102")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.324399" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.333369" level="INFO">${alt} = Tondeuse à gazon électrique - POWERPLUS - POWEG622</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.329382" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.334365" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.334365" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.103")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.329382" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.339349" level="INFO">${alt} = Micro-ondes OCEANIC MO20B11 Noir l 45,4 x H26,1 x </msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.334365" elapsed="0.004984"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.339349" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.339349" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.104")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.334365" elapsed="0.004984"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.344331" level="INFO">${alt} = Machine à glaçes NINJA - Creami NC300EU - 6 progra</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.340345" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.344331" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.344331" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.105")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.340345" elapsed="0.003986"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.349315" level="INFO">${alt} = Aspirateur Lavant Tineco Floor One S5 Combo - Aspi</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.345328" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.349315" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.349315" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.106")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.345328" elapsed="0.003987"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.354298" level="INFO">${alt} = BOSCH BGC05AAA2 Cleann'n aspirateur sans sac rouge</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.350311" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.354298" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.354298" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.107")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.349315" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.358284" level="INFO">${alt} = Mario Kart World • Jeu Nintendo Switch 2</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.355294" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.359281" level="INFO">Length is 40.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.359281" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.108")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.354298" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.363268" level="INFO">${alt} = Table de cuisson induction OCEANIC 3 foyers L60 x </msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.359281" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.363268" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.363268" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.109")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.359281" elapsed="0.003987"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.367254" level="INFO">${alt} = Robot multifonctions BOSCH MULTI TALENT MCM3501M -</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.364264" elapsed="0.002990"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.368251" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.368251" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.110")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.363268" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.373234" level="INFO">${alt} = APPLE AirPods 4</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.368251" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.373234" level="INFO">Length is 15.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.373234" elapsed="0.000998"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.111")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.368251" elapsed="0.005981"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.378218" level="INFO">${alt} = RAOO MIN - Tapis de Marche/Course- 1-6 km/h- Moteu</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.374232" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.378218" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.378218" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.112")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.374232" elapsed="0.003986"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.383201" level="INFO">${alt} = Spa gonflable BESTWAY - Lay-Z-Spa Ibiza - 140 airj</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.379215" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.383201" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.383201" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.113")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.379215" elapsed="0.003986"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.389180" level="INFO">${alt} = Écran PC - AOC - Q27G4XF - 27" QHD - Dalle IPS - 1</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.383201" elapsed="0.005979"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.389180" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.389180" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.114")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.383201" elapsed="0.005979"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.395160" level="INFO">${alt} = Aspirateur eau et poussières 1000W WD2 plus 2 V-15</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.390176" elapsed="0.004984"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.395160" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.395160" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.115")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.390176" elapsed="0.004984"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.400143" level="INFO">${alt} = Ecouteurs - Samsung - Galaxy Buds 3 Pro - Noir - B</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.395160" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.400143" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.400143" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.116")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.395160" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.411136" level="INFO">${alt} = BEBECONFORT HAZE Poussette 3 en 1 i-Size - Nacelle</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.401140" elapsed="0.009996"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.411136" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.411136" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.117")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.401140" elapsed="0.009996"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.416090" level="INFO">${alt} = Reecle I-Size Siège Auto 360° Pivotant ISOFIX 40-1</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.412135" elapsed="0.003955"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.416090" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.416090" elapsed="0.000997"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.118")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.411136" elapsed="0.005951"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.421073" level="INFO">${alt} = LEGO® 10300 La machine à remonter le temps de Reto</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.417087" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.422070" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.422070" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.119")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.417087" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.427053" level="INFO">${alt} = GARMIN Venu 2S - Montre connectée GPS - Rose Gold </msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.422070" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.428051" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.428051" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.120")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.422070" elapsed="0.005981"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.432037" level="INFO">${alt} = Table 4 foyers CONTINENTAL EDISON - Gaz - Verre no</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.428051" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.432037" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.432037" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.121")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.428051" elapsed="0.003986"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.437021" level="INFO">${alt} = Table de réception traiteur pliante - 8 personnes </msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.433034" elapsed="0.004982"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.438016" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.438016" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.122")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.433034" elapsed="0.004982"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.443997" level="INFO">${alt} = Voiture électrique 12V-4,5 Ah, 3 vitesses, avec té</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.438016" elapsed="0.005981"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.444994" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.444994" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.123")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.438016" elapsed="0.006978"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.449975" level="INFO">${alt} = Trampoline extérieur Classique ø 244 cm- 8FT- File</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.444994" elapsed="0.004981"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.450973" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.450973" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.124")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.444994" elapsed="0.005979"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.454959" level="INFO">${alt} = Machine à café dosette - PHILIPS - SENSEO SWITCH H</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.450973" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.455957" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.454959" elapsed="0.000998"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.125")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.450973" elapsed="0.004984"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.459943" level="INFO">${alt} = Sèche-linge à condensation CANDY CSE C9DBEB-47 Sma</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.455957" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.459943" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.459943" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.126")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.455957" elapsed="0.003986"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.464925" level="INFO">${alt} = Tonnelle de Jardin,3X3m Tonnelle Pliante POP-UP av</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.460940" elapsed="0.003985"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.464925" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.464925" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.127")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.460940" elapsed="0.003985"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.469909" level="INFO">${alt} = Ensemble ZEN Sommier + Matelas Hauteur 20cm 160x20</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.465922" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.469909" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.469909" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.128")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.465922" elapsed="0.003987"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.473895" level="INFO">${alt} = Chaises de jardin empilables en textilène - TERRE </msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.469909" elapsed="0.004984"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.474893" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.474893" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.129")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.469909" elapsed="0.004984"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.487848" level="INFO">${alt} = SUREFEED Distributeur de nourriture/croquettes à p</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.474893" elapsed="0.012955"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.488845" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.487848" elapsed="0.000997"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.130")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.474893" elapsed="0.013952"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.522732" level="INFO">${alt} = Chaises de Salle à Manger Scandinave Lot de 6, Cha</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.488845" elapsed="0.033887"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.522732" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.522732" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.131")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.488845" elapsed="0.033887"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.534692" level="INFO">${alt} = Redmi Note 13 Noir 8 GO + 256 GO</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.522732" elapsed="0.011960"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.534692" level="INFO">Length is 32.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.534692" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.132")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.522732" elapsed="0.011960"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.604455" level="INFO">${alt} = MOVA K20 - Aspirateur Laveur Sec Et Humide - Poids</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.535688" elapsed="0.068767"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.605452" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.605452" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.133")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.535688" elapsed="0.069764"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.708107" level="INFO">${alt} = Lit cabane enfant 90x190 cm - Bois - Sommier à lat</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.605452" elapsed="0.102655"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.709105" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.709105" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.134")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.605452" elapsed="0.103653"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.729038" level="INFO">${alt} = BLACK+DECKER Coupe-Bordures 33cm Sans Fil BCSTE636</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.709105" elapsed="0.019933"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.729038" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.729038" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.135")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.709105" elapsed="0.019933"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.735018" level="INFO">${alt} = PC Portable Gamer HP Victus 15-fb0202nf - Sans Win</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.729038" elapsed="0.005980"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.735018" level="INFO">Length is 50.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.735018" elapsed="0.000996"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.136")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.729038" elapsed="0.006976"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.740997" level="INFO">${alt} = Fêtes des mères</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.736014" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.741994" level="INFO">Length is 15.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.740997" elapsed="0.000997"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.137")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.736014" elapsed="0.005980"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.746978" level="INFO">${alt} = nintendo switch 2</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.741994" elapsed="0.004984"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.746978" level="INFO">Length is 17.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.746978" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.138")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.741994" elapsed="0.004984"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.750963" level="INFO">${alt} = Jardin</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.746978" elapsed="0.004982"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.751960" level="INFO">Length is 6.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.751960" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.139")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.746978" elapsed="0.004982"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.756943" level="INFO">${alt} = Electroménager</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.751960" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.756943" level="INFO">Length is 14.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.756943" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.140")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.751960" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.761927" level="INFO">${alt} = Meuble</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.757941" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.761927" level="INFO">Length is 6.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.761927" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.141")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.757941" elapsed="0.003986"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.765915" level="INFO">${alt} = Sport</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.761927" elapsed="0.003988"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.765915" level="INFO">Length is 5.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.765915" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.142")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.761927" elapsed="0.003988"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.770896" level="INFO">${alt} = TV - son</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.765915" elapsed="0.004981"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.770896" level="INFO">Length is 8.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.770896" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.143")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.765915" elapsed="0.004981"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.775879" level="INFO">${alt} = Canapé</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.771894" elapsed="0.003985"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.776876" level="INFO">Length is 6.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.776876" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.144")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.771894" elapsed="0.004982"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.781861" level="INFO">${alt} = Téléphonie</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.776876" elapsed="0.004985"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.781861" level="INFO">Length is 10.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.781861" elapsed="0.000996"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.145")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.776876" elapsed="0.005981"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.789834" level="INFO">${alt} = Informatique</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.782857" elapsed="0.006977"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.789834" level="INFO">Length is 12.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.789834" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.146")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.782857" elapsed="0.006977"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.794214" level="INFO">${alt} = Bricolage</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.789834" elapsed="0.004380"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.794214" level="INFO">Length is 9.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.794214" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.147")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.789834" elapsed="0.004380"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.798201" level="INFO">${alt} = Jeux-vidéos</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.794214" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.799197" level="INFO">Length is 11.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.799197" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.148")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.794214" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.804181" level="INFO">${alt} = Mode</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.799197" elapsed="0.004984"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.804181" level="INFO">Length is 4.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.804181" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.149")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.799197" elapsed="0.004984"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:41.809164" level="INFO">${alt} = Jouets</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.804181" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:41.809164" level="INFO">Length is 6.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.809164" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.150")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.804181" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.006500" level="INFO">${alt} = Auto - Moto</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:41.809164" elapsed="0.197336"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.006500" level="INFO">Length is 11.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.006500" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.151")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:41.809164" elapsed="0.197336"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.015470" level="INFO">${alt} = Literie</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.007498" elapsed="0.007972"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.015470" level="INFO">Length is 7.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.015470" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.152")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.007498" elapsed="0.007972"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.023442" level="INFO">${alt} = Bébé</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.015470" elapsed="0.008970"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.024440" level="INFO">Length is 4.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.024440" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.153")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.015470" elapsed="0.008970"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.030419" level="INFO">${alt} = Mes courses</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.024440" elapsed="0.005979"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.030419" level="INFO">Length is 11.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.030419" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.154")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.024440" elapsed="0.005979"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.036399" level="INFO">${alt} = La cave</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.031416" elapsed="0.005980"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.037396" level="INFO">Length is 7.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.037396" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.155")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.031416" elapsed="0.005980"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.043377" level="INFO">${alt} = Animalerie</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.037396" elapsed="0.005981"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.043377" level="INFO">Length is 10.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.043377" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.156")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.037396" elapsed="0.005981"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.068293" level="INFO">${alt} = PC Portables</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.044375" elapsed="0.023918"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.069291" level="INFO">Length is 12.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.069291" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.157")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.043377" elapsed="0.025914"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.078259" level="INFO">${alt} = Alertes</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.070287" elapsed="0.007972"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.079255" level="INFO">Length is 7.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.079255" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.158")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.069291" elapsed="0.009964"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.085235" level="INFO">${alt} = Alertes</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.079255" elapsed="0.005980"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.086231" level="INFO">Length is 7.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.086231" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.159")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.079255" elapsed="0.006976"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.092212" level="INFO">${alt} = iPhone 12 mini Reconditionné - Excellent état</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.086231" elapsed="0.005981"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.093208" level="INFO">Length is 45.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.092212" elapsed="0.000996"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.160")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.086231" elapsed="0.006977"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.099189" level="INFO">${alt} = CONTINENTAL EDISON TV QLED UHD 4K 43''</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.093208" elapsed="0.005981"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.100185" level="INFO">Length is 38.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.100185" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.161")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.093208" elapsed="0.006977"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.107162" level="INFO">${alt} = Table de réception pliante</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.100185" elapsed="0.006977"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.108158" level="INFO">Length is 26.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.107162" elapsed="0.000996"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.162")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.100185" elapsed="0.007973"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.115135" level="INFO">${alt} = ARTHUR MARTIN Batterie de cuisine</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.108158" elapsed="0.006977"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.115135" level="INFO">Length is 33.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.115135" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.163")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.108158" elapsed="0.007973"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.123566" level="INFO">${alt} = OCEANIC Lave-vaisselle </msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.116131" elapsed="0.007435"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.123566" level="INFO">Length is 23.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.123566" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.164")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.116131" elapsed="0.007435"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.129545" level="INFO">${alt} = Pergola avec toit déroulant</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.124562" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.129545" level="INFO">Length is 27.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.129545" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.165")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.124562" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.134528" level="INFO">${alt} = Vélo Électrique Touroll B1 26</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.129545" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.134528" level="INFO">Length is 29.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.134528" elapsed="0.000998"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.166")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.129545" elapsed="0.005981"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.140509" level="INFO">${alt} = BOSCH robot multifonctions</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.135526" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.140509" level="INFO">Length is 26.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.140509" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.167")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.135526" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.146488" level="INFO">${alt} = VASAGLE Lit 90 x 190 cm</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.140509" elapsed="0.005979"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.146488" level="INFO">Length is 23.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.146488" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.168")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.140509" elapsed="0.005979"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.152472" level="INFO">${alt} = Ensemble repas de jardin</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.146488" elapsed="0.005984"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.153466" level="INFO">Length is 24.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.153466" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.169")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.146488" elapsed="0.006978"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.163432" level="INFO">${alt} = Vidéoprojecteur 4k</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.153466" elapsed="0.009966"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.164428" level="INFO">Length is 18.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.163432" elapsed="0.000996"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.170")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.153466" elapsed="0.010962"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.194328" level="INFO">${alt} = Lot de 2 matelas mousse 90x190</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.164428" elapsed="0.029900"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.194328" level="INFO">Length is 30.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.194328" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.171")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.164428" elapsed="0.029900"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.624187" level="INFO">${alt} = TASSIMO Machine à café</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.195325" elapsed="0.428862"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.624187" level="INFO">Length is 22.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.624187" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.172")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.195325" elapsed="0.428862"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.630168" level="INFO">${alt} = DODO Lot de 2 Oreillers</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.624187" elapsed="0.005981"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.631164" level="INFO">Length is 23.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.631164" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.173")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.624187" elapsed="0.006977"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.637145" level="INFO">${alt} = PARISOT Ensemble enfilade + table</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.631164" elapsed="0.005981"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.637145" level="INFO">Length is 33.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.637145" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.174")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.631164" elapsed="0.005981"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.642126" level="INFO">${alt} = piscines et spa</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.638141" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.643124" level="INFO">Length is 15.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.643124" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.175")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.638141" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.647109" level="INFO">${alt} = piscines et spa</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.643124" elapsed="0.003985"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.647109" level="INFO">Length is 15.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.647109" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.176")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.643124" elapsed="0.003985"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.652095" level="INFO">${alt} = Mobilier de jardin</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.648107" elapsed="0.003988"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.652095" level="INFO">Length is 18.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.652095" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.177")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.648107" elapsed="0.004982"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.657076" level="INFO">${alt} = Mobilier de jardin</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.653089" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.657076" level="INFO">Length is 18.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.657076" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.178")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.653089" elapsed="0.003987"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.661063" level="INFO">${alt} = Outillage de jardin</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.657076" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.661063" level="INFO">Length is 19.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.661063" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.179")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.657076" elapsed="0.004984"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.666047" level="INFO">${alt} = outillage de jardin</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.662060" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.666047" level="INFO">Length is 19.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.666047" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.180")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.662060" elapsed="0.003987"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.670033" level="INFO">${alt} = aménagement terrasse</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.666047" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.671030" level="INFO">Length is 20.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.671030" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.181")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.666047" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.675017" level="INFO">${alt} = aménagement terrasse</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.671030" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.675017" level="INFO">Length is 20.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.675017" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.182")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.671030" elapsed="0.003987"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.680000" level="INFO">${alt} = Foire aux vins</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.675017" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.680000" level="INFO">Length is 14.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.680000" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.183")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.675017" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.684982" level="INFO">${alt} = Foire aux vins</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.680000" elapsed="0.004982"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.685980" level="INFO">Length is 14.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.684982" elapsed="0.000998"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.184")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.680000" elapsed="0.005980"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.691959" level="INFO">${alt} = Foire aux vins</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.685980" elapsed="0.005979"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.691959" level="INFO">Length is 14.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.691959" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.185")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.685980" elapsed="0.005979"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.696942" level="INFO">${alt} = Foire aux vins</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.691959" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.697939" level="INFO">Length is 14.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.697939" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.186")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.691959" elapsed="0.005980"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.702921" level="INFO">${alt} = Foire aux vins</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.697939" elapsed="0.004982"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.703918" level="INFO">Length is 14.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.703918" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.187")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.697939" elapsed="0.005979"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.708901" level="INFO">${alt} = Foire aux vins</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.703918" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.708901" level="INFO">Length is 14.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.708901" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.188")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.703918" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.714883" level="INFO">${alt} = Foire aux vins</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.709898" elapsed="0.004985"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.714883" level="INFO">Length is 14.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.714883" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.189")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.708901" elapsed="0.006978"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.722855" level="INFO">${alt} = Foire aux vins</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.715879" elapsed="0.006976"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.722855" level="INFO">Length is 14.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.722855" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.190")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.715879" elapsed="0.006976"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.727837" level="INFO">${alt} = Promo°</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.722855" elapsed="0.004982"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.727837" level="INFO">Length is 6.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.727837" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.191")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.722855" elapsed="0.004982"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.731824" level="INFO">${alt} = Foire aux vins</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.727837" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.731824" level="INFO">Length is 14.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.731824" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.192")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.727837" elapsed="0.003987"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.735811" level="INFO">${alt} = SAMSUNG TV QLED 55</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.732821" elapsed="0.002990"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.735811" level="INFO">Length is 18.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.735811" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.193")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.731824" elapsed="0.003987"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.739797" level="INFO">${alt} = Armoire de rangement</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.735811" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.739797" level="INFO">Length is 20.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.739797" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.194")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.735811" elapsed="0.003986"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.742787" level="INFO">${alt} = Canapé d'angle convertible</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.739797" elapsed="0.002990"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.743784" level="INFO">Length is 26.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.742787" elapsed="0.000997"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.195")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.739797" elapsed="0.003987"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.747771" level="INFO">${alt} = FAGOR Friteuse Airfryer 8L</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.743784" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.747771" level="INFO">Length is 26.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.747771" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.196")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.743784" elapsed="0.003987"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.753751" level="INFO">${alt} = Kit tout inclus spa</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.748768" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.753751" level="INFO">Length is 19.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.753751" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.197")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.748768" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.758734" level="INFO">${alt} = GARMIN Venu 2S - Montre connectée</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.753751" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.758734" level="INFO">Length is 33.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.758734" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.198")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.753751" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.762720" level="INFO">${alt} = Lave-linge hublot 10kg</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.758734" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.763717" level="INFO">Length is 22.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.762720" elapsed="0.000997"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.199")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.758734" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.766707" level="INFO">${alt} = Clair Obscur : Expedition 33 - Jeu PS5</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.763717" elapsed="0.002990"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.767704" level="INFO">Length is 38.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.766707" elapsed="0.000997"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.200")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.763717" elapsed="0.003987"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.770693" level="INFO">${alt} = ROBOROCK QREVO EDGE</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.767704" elapsed="0.002989"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.771690" level="INFO">Length is 19.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.771690" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.201")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.767704" elapsed="0.003986"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.776674" level="INFO">${alt} = Canapé convertible 3 places</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.771690" elapsed="0.004984"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.776674" level="INFO">Length is 27.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.776674" elapsed="0.000997"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.202")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.771690" elapsed="0.005981"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.782654" level="INFO">${alt} = ROBOROCK SAROS Z70</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.777671" elapsed="0.004983"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.782654" level="INFO">Length is 18.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.782654" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.203")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.777671" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.787745" level="INFO">${alt} = SCHEPPACH Robot tondeuse connecté</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.783650" elapsed="0.004095"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.787745" level="INFO">Length is 33.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.787745" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.204")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.783650" elapsed="0.004095"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.791731" level="INFO">${alt} = SCHEPPACH Tondeuse thermique autotractée</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.787745" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.791731" level="INFO">Length is 40.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.791731" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.205")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.787745" elapsed="0.003986"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.796715" level="INFO">${alt} = SCHEPPACH Elagueuse thermique</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.791731" elapsed="0.004984"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.796715" level="INFO">Length is 29.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.796715" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.206")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.791731" elapsed="0.004984"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.800701" level="INFO">${alt} = SCHEPPACH Tondeuse thermique</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.796715" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.801698" level="INFO">Length is 28.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.800701" elapsed="0.000997"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.207")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.796715" elapsed="0.004983"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.804688" level="INFO">${alt} = produit</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.801698" elapsed="0.002990"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.804688" level="INFO">Length is 7.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.804688" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.208")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.801698" elapsed="0.002990"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.808674" level="INFO">${alt} = produit</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.805684" elapsed="0.002990"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.808674" level="INFO">Length is 7.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.808674" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.209")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.804688" elapsed="0.003986"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.812661" level="INFO">${alt} = produit</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.808674" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.812661" level="INFO">Length is 7.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.812661" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.210")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.808674" elapsed="0.003987"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.815651" level="INFO">${alt} = produit</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.812661" elapsed="0.002990"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.816647" level="INFO">Length is 7.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.816647" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.211")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.812661" elapsed="0.003986"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.820634" level="INFO">${alt} = produit</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.816647" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.820634" level="INFO">Length is 7.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.820634" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.212")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.816647" elapsed="0.003987"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.824620" level="INFO">${alt} = produit</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.820634" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.824620" level="INFO">Length is 7.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.824620" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.213")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.820634" elapsed="0.003986"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.828607" level="INFO">${alt} = produit</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.824620" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.828607" level="INFO">Length is 7.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.828607" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.214")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.824620" elapsed="0.003987"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.832594" level="INFO">${alt} = produit</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.828607" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.832594" level="INFO">Length is 7.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.832594" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.215")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.828607" elapsed="0.003987"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.836580" level="INFO">${alt} = Image 1</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.832594" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.836580" level="INFO">Length is 7.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.836580" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.216")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.832594" elapsed="0.003986"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.842560" level="INFO">${alt} = MAXELL - 32 Piles LR6 AA</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.837578" elapsed="0.004982"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.842560" level="INFO">Length is 24.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.842560" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.217")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.837578" elapsed="0.004982"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.847543" level="INFO">${alt} = Balade à Rosé 2024 IGP</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.843557" elapsed="0.003986"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.847543" level="INFO">Length is 22.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.847543" elapsed="0.000997"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.218")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.842560" elapsed="0.005980"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.851530" level="INFO">${alt} = MAXELL - 32 Piles LR6 AA</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.848540" elapsed="0.002990"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.852527" level="INFO">Length is 24.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.851530" elapsed="0.000997"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.219")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.848540" elapsed="0.003987"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.855517" level="INFO">${alt} = BESTWAY Matelas Camping</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.852527" elapsed="0.002990"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.856513" level="INFO">Length is 23.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.855517" elapsed="0.000996"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.220")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.852527" elapsed="0.003986"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.859503" level="INFO">${alt} = MAXELL - 32 Piles LR6 AA</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.856513" elapsed="0.002990"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.859503" level="INFO">Length is 24.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.859503" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.221")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.856513" elapsed="0.002990"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.863489" level="INFO">${alt} = INUI Chargeur Induction </msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.860500" elapsed="0.002989"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.864487" level="INFO">Length is 24.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.863489" elapsed="0.000998"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.222")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.859503" elapsed="0.004984"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.867476" level="INFO">${alt} = Promo°</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.864487" elapsed="0.003988"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.868475" level="INFO">Length is 6.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.868475" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.223")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.864487" elapsed="0.003988"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.872459" level="INFO">${alt} = Réfrigérateur congélateur 251L</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.868475" elapsed="0.003984"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.872459" level="INFO">Length is 30.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.872459" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.224")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.868475" elapsed="0.003984"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.876446" level="INFO">${alt} = Smart TV QLED 4K 65</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.872459" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.876446" level="INFO">Length is 19.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.876446" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.225")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.872459" elapsed="0.004984"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.880433" level="INFO">${alt} = Lave-linge 9kg</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.877443" elapsed="0.002990"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.880433" level="INFO">Length is 14.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.880433" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.226")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.877443" elapsed="0.002990"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.884419" level="INFO">${alt} = Image 1</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.881430" elapsed="0.002989"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.884419" level="INFO">Length is 7.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.884419" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.227")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.880433" elapsed="0.003986"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:01:42.888406" level="INFO">${alt} = Votre avis nous intéresse</msg>
+<var>${alt}</var>
+<arg>${img}</arg>
+<arg>alt</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.884419" elapsed="0.003987"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-13T16:01:42.888406" level="INFO">Length is 25.</msg>
+<arg>${alt}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-13T16:01:42.888406" elapsed="0.000000"/>
+</kw>
+<var name="${img}">&lt;selenium.webdriver.remote.webelement.WebElement (session="7f4c216a914cf782968786ff6cbced01", element="f.0B067EC01213D14B0BD409D3E05F2150.d.84EB1ED11C4505E7A41AA9877BF1B5C0.e.228")&gt;</var>
+<status status="PASS" start="2025-05-13T16:01:42.884419" elapsed="0.003987"/>
+</iter>
+<var>${img}</var>
+<value>@{images}</value>
+<status status="PASS" start="2025-05-13T16:01:41.143008" elapsed="1.745398"/>
+</for>
+<status status="PASS" start="2025-05-13T16:01:41.051318" elapsed="1.838085"/>
 </kw>
 <kw name="Close the Browser" owner="common_keywords" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-13T10:09:54.985222" elapsed="2.588580"/>
+<status status="PASS" start="2025-05-13T16:01:42.889403" elapsed="2.569592"/>
 </kw>
-<status status="PASS" start="2025-05-13T10:09:54.985222" elapsed="2.588580"/>
+<status status="PASS" start="2025-05-13T16:01:42.889403" elapsed="2.569592"/>
 </kw>
-<tag>ProductPage</tag>
-<status status="PASS" start="2025-05-13T10:09:39.171490" elapsed="18.402312"/>
+<status status="PASS" start="2025-05-13T16:01:34.881124" elapsed="10.577871"/>
 </test>
-<status status="PASS" start="2025-05-13T10:09:38.717456" elapsed="18.856346"/>
+<status status="PASS" start="2025-05-13T16:01:18.784027" elapsed="26.675961"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">ProductPage</stat>
 </tag>
 <suite>
-<stat name="productDetailsTests" id="s1" pass="1" fail="0" skip="0">productDetailsTests</stat>
+<stat name="accessibilityTests" id="s1" pass="2" fail="0" skip="0">accessibilityTests</stat>
 </suite>
 </statistics>
 <errors>

@@ -14,8 +14,10 @@ Test Teardown    Close the Browser
 Verify Product Prices Are Within Selected Filter Range
     [Tags]    Filter    Price
     Enter Search Term And Submit    ${SEARCH_TERMS}
-    Select Price Filter Between 200 And 500
+    Select Price Filter Between 100 And 200
     Wait Until Page Contains Element    ${PRICE_SPAN}    timeout=10s
+    Sleep   5s
+    Reload Page
     ${prices}=    Get All Product Prices
-    Should Prices Be In Range    ${prices}    200    500
+    Should Prices Be In Range    ${prices}    100    200
     
