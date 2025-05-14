@@ -1,227 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.11.0 on win32)" generated="2025-05-13T16:34:43.051734" rpa="false" schemaversion="5">
-<suite id="s1" name="responsiveTests" source="C:\Users\Douae.MAARAD\OneDrive - Akkodis\Desktop\RobotTests\testCases\responsiveTests.robot">
-<test id="s1-t1" name="Desktop View Test" line="10">
+<robot generator="Robot 7.2.2 (Python 3.11.0 on win32)" generated="2025-05-14T11:48:58.746673" rpa="false" schemaversion="5">
+<suite id="s1" name="footerTests" source="C:\Users\Douae.MAARAD\OneDrive - Akkodis\Desktop\RobotTests\testCases\footerTests.robot">
+<test id="s1-t1" name="TC_Footer_Legal_Link" line="13">
 <kw name="Open Browser To Home Page" owner="common_keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-13T16:34:43.491629" level="INFO">Opening browser 'chrome' to base url 'https://www.cdiscount.com/'.</msg>
+<msg time="2025-05-14T11:48:59.189720" level="INFO">Opening browser 'chrome' to base url 'https://www.cdiscount.com/'.</msg>
 <arg>${BASE_URL}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-13T16:34:43.491629" elapsed="42.196269"/>
+<status status="PASS" start="2025-05-14T11:48:59.189720" elapsed="4.810132"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-13T16:35:25.688894" elapsed="0.041860"/>
+<status status="PASS" start="2025-05-14T11:49:03.999852" elapsed="0.034152"/>
 </kw>
 <kw name="Accept Cookies If Present" owner="common_keywords">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2025-05-13T16:35:30.867866" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-05-13T16:35:30.867866" level="FAIL">Element 'xpath=//button[contains(text(), 'Accepter') or contains(text(), 'J’accepte')]' not visible after 5 seconds.</msg>
+<msg time="2025-05-14T11:49:09.377881" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-38.png"&gt;&lt;img src="selenium-screenshot-38.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-14T11:49:09.377881" level="FAIL">Element 'xpath=//button[contains(text(), 'Accepter') or contains(text(), 'J’accepte')]' not visible after 5 seconds.</msg>
 <arg>${ACCEPT_COOKIES_BUTTON}</arg>
 <arg>5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2025-05-13T16:35:25.731750" elapsed="5.140103">Element 'xpath=//button[contains(text(), 'Accepter') or contains(text(), 'J’accepte')]' not visible after 5 seconds.</status>
+<status status="FAIL" start="2025-05-14T11:49:04.035086" elapsed="5.345786">Element 'xpath=//button[contains(text(), 'Accepter') or contains(text(), 'J’accepte')]' not visible after 5 seconds.</status>
 </kw>
-<msg time="2025-05-13T16:35:30.871853" level="INFO">${cookie_present} = False</msg>
+<msg time="2025-05-14T11:49:09.380872" level="INFO">${cookie_present} = False</msg>
 <var>${cookie_present}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${ACCEPT_COOKIES_BUTTON}</arg>
 <arg>5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-05-13T16:35:25.731750" elapsed="5.140103"/>
+<status status="PASS" start="2025-05-14T11:49:04.035086" elapsed="5.345786"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <arg>${cookie_present}</arg>
 <arg>Click Button</arg>
 <arg>${ACCEPT_COOKIES_BUTTON}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-05-13T16:35:30.871853" elapsed="0.000000"/>
+<status status="PASS" start="2025-05-14T11:49:09.380872" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-05-13T16:35:25.731750" elapsed="5.140103"/>
+<status status="PASS" start="2025-05-14T11:49:04.035086" elapsed="5.345786"/>
 </kw>
-<status status="PASS" start="2025-05-13T16:34:43.490638" elapsed="47.381215"/>
+<status status="PASS" start="2025-05-14T11:48:59.188720" elapsed="10.192152"/>
 </kw>
-<kw name="Set Window Size" owner="SeleniumLibrary">
-<arg>1920</arg>
-<arg>1080</arg>
-<doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" start="2025-05-13T16:35:30.872850" elapsed="0.370931"/>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${FOOTER_LEGAL_NOTICE}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-14T11:49:09.381869" elapsed="0.011962"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-13T16:35:33.244998" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
+<msg time="2025-05-14T11:49:14.395688" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-13T16:35:31.244778" elapsed="2.000220"/>
+<status status="PASS" start="2025-05-14T11:49:09.394823" elapsed="5.000865"/>
 </kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-05-13T16:35:33.253021" level="INFO">Current page contains element 'xpath=//header'.</msg>
-<arg>xpath=//header</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-05-13T16:35:33.244998" elapsed="0.008023"/>
+<kw name="Click And Verify Footer Link" owner="footer_page">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-05-14T11:49:14.396684" elapsed="0.300888"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-14T11:49:14.698570" level="INFO">Clicking element 'xpath=//a[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'mentions légales')]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-14T11:49:14.697572" elapsed="0.142884"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-14T11:49:14.847431" level="INFO">Current location is 'https://www.cdiscount.com/resources/rwd/other/mentions_legales.pdf'.</msg>
+<arg>${expected_url}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-14T11:49:14.840456" elapsed="0.006975"/>
+</kw>
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>Location Should Be</arg>
+<arg>${expected_url}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-14T11:49:14.840456" elapsed="0.006975"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-14T11:49:14.847431" elapsed="2.158986"/>
+</kw>
+<arg>${FOOTER_LEGAL_NOTICE}</arg>
+<arg>${LEGAL_NOTICE_URL}</arg>
+<status status="PASS" start="2025-05-14T11:49:14.395688" elapsed="2.610729"/>
+</kw>
+<kw name="Click And Verify Footer Link" owner="footer_page">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-05-14T11:49:17.007414" elapsed="0.288015"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-14T11:49:17.295429" level="INFO">Clicking element 'xpath=//a[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'conditions générales')]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-14T11:49:17.295429" elapsed="3.114615"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-14T11:49:20.416024" level="INFO">Current location is 'https://clients.cdiscount.com/simple/cgv.aspx'.</msg>
+<arg>${expected_url}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-14T11:49:20.411041" elapsed="0.005980"/>
+</kw>
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>Location Should Be</arg>
+<arg>${expected_url}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-14T11:49:20.410044" elapsed="0.006977"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-05-14T11:49:20.417021" elapsed="1.461718"/>
+</kw>
+<arg>${FOOTER_TERMS}</arg>
+<arg>${TERMS_URL}</arg>
+<status status="PASS" start="2025-05-14T11:49:17.006417" elapsed="4.872322"/>
 </kw>
 <kw name="Close the Browser" owner="common_keywords" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-13T16:35:33.254012" elapsed="2.394830"/>
+<status status="PASS" start="2025-05-14T11:49:21.879736" elapsed="2.621413"/>
 </kw>
-<status status="PASS" start="2025-05-13T16:35:33.254012" elapsed="2.394830"/>
+<status status="PASS" start="2025-05-14T11:49:21.879736" elapsed="2.621413"/>
 </kw>
-<status status="PASS" start="2025-05-13T16:34:43.489638" elapsed="52.160199"/>
+<status status="PASS" start="2025-05-14T11:48:59.187723" elapsed="25.313426"/>
 </test>
-<test id="s1-t2" name="Tablet View Test" line="15">
-<kw name="Open Browser To Home Page" owner="common_keywords" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-13T16:35:35.655640" level="INFO">Opening browser 'chrome' to base url 'https://www.cdiscount.com/'.</msg>
-<arg>${BASE_URL}</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-13T16:35:35.654646" elapsed="3.952004"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-13T16:35:39.606650" elapsed="0.032594"/>
-</kw>
-<kw name="Accept Cookies If Present" owner="common_keywords">
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2025-05-13T16:35:44.945638" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-05-13T16:35:44.945638" level="FAIL">Element 'xpath=//button[contains(text(), 'Accepter') or contains(text(), 'J’accepte')]' not visible after 5 seconds.</msg>
-<arg>${ACCEPT_COOKIES_BUTTON}</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2025-05-13T16:35:39.639244" elapsed="5.306394">Element 'xpath=//button[contains(text(), 'Accepter') or contains(text(), 'J’accepte')]' not visible after 5 seconds.</status>
-</kw>
-<msg time="2025-05-13T16:35:44.945638" level="INFO">${cookie_present} = False</msg>
-<var>${cookie_present}</var>
-<arg>Wait Until Element Is Visible</arg>
-<arg>${ACCEPT_COOKIES_BUTTON}</arg>
-<arg>5s</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-05-13T16:35:39.639244" elapsed="5.306394"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>${cookie_present}</arg>
-<arg>Click Button</arg>
-<arg>${ACCEPT_COOKIES_BUTTON}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-05-13T16:35:44.946633" elapsed="0.000000"/>
-</kw>
-<status status="PASS" start="2025-05-13T16:35:39.639244" elapsed="5.307389"/>
-</kw>
-<status status="PASS" start="2025-05-13T16:35:35.653641" elapsed="9.292992"/>
-</kw>
-<kw name="Set Window Size" owner="SeleniumLibrary">
-<arg>768</arg>
-<arg>1024</arg>
-<doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" start="2025-05-13T16:35:44.946633" elapsed="0.369059"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-13T16:35:47.315819" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-13T16:35:45.315692" elapsed="2.000127"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-05-13T16:35:47.324538" level="INFO">Current page contains element 'xpath=//header'.</msg>
-<arg>xpath=//header</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-05-13T16:35:47.316268" elapsed="0.008270"/>
-</kw>
-<kw name="Close the Browser" owner="common_keywords" type="TEARDOWN">
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-13T16:35:47.324538" elapsed="2.442411"/>
-</kw>
-<status status="PASS" start="2025-05-13T16:35:47.324538" elapsed="2.442411"/>
-</kw>
-<status status="PASS" start="2025-05-13T16:35:35.652810" elapsed="14.115324"/>
-</test>
-<test id="s1-t3" name="Mobile View Test" line="20">
-<kw name="Open Browser To Home Page" owner="common_keywords" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-13T16:35:49.773165" level="INFO">Opening browser 'chrome' to base url 'https://www.cdiscount.com/'.</msg>
-<arg>${BASE_URL}</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-13T16:35:49.773165" elapsed="19.268474"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-13T16:36:09.041639" elapsed="0.045847"/>
-</kw>
-<kw name="Accept Cookies If Present" owner="common_keywords">
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${ACCEPT_COOKIES_BUTTON}</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-13T16:36:09.088482" elapsed="0.453679"/>
-</kw>
-<msg time="2025-05-13T16:36:09.542161" level="INFO">${cookie_present} = True</msg>
-<var>${cookie_present}</var>
-<arg>Wait Until Element Is Visible</arg>
-<arg>${ACCEPT_COOKIES_BUTTON}</arg>
-<arg>5s</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-05-13T16:36:09.088482" elapsed="0.453679"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-13T16:36:09.543158" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Accepter') or contains(text(), 'J’accepte')]'.</msg>
-<arg>${ACCEPT_COOKIES_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-13T16:36:09.543158" elapsed="0.143605"/>
-</kw>
-<arg>${cookie_present}</arg>
-<arg>Click Button</arg>
-<arg>${ACCEPT_COOKIES_BUTTON}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-05-13T16:36:09.542161" elapsed="0.144602"/>
-</kw>
-<status status="PASS" start="2025-05-13T16:36:09.087486" elapsed="0.599277"/>
-</kw>
-<status status="PASS" start="2025-05-13T16:35:49.772169" elapsed="19.914594"/>
-</kw>
-<kw name="Set Window Size" owner="SeleniumLibrary">
-<arg>375</arg>
-<arg>667</arg>
-<doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" start="2025-05-13T16:36:09.686763" elapsed="0.377843"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-13T16:36:12.065664" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-13T16:36:10.065603" elapsed="2.000061"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-05-13T16:36:12.079619" level="INFO">Current page contains element 'xpath=//header'.</msg>
-<arg>xpath=//header</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-05-13T16:36:12.065664" elapsed="0.014955"/>
-</kw>
-<kw name="Close the Browser" owner="common_keywords" type="TEARDOWN">
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-13T16:36:12.080619" elapsed="2.472345"/>
-</kw>
-<status status="PASS" start="2025-05-13T16:36:12.080619" elapsed="2.472345"/>
-</kw>
-<status status="PASS" start="2025-05-13T16:35:49.771132" elapsed="24.782747"/>
-</test>
-<status status="PASS" start="2025-05-13T16:34:43.054694" elapsed="91.500183"/>
+<status status="PASS" start="2025-05-14T11:48:58.749688" elapsed="25.752458"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="responsiveTests" id="s1" pass="3" fail="0" skip="0">responsiveTests</stat>
+<stat name="footerTests" id="s1" pass="1" fail="0" skip="0">footerTests</stat>
 </suite>
 </statistics>
 <errors>

@@ -6,4 +6,6 @@ ${EMAIL}              douasmaa03@gmail.com
 ${PASSWORD}           QuNRm37!nbjH7N!
 ${WRONG_PASSWORD}     wrongPassword123
 ${SEARCH_TERMS}       pc   
-${PRODUCT_SKU}        83BN002PFR
+${LEGAL_NOTICE_URL}       https://www.cdiscount.com/resources/rwd/other/mentions_legales.pdf
+${TERMS_URL}       https://clients.cdiscount.com/simple/cgv.aspx
+

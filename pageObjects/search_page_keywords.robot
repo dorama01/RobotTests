@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource   ../resources/keywords/common_keywords.robot
 Resource   ../resources/locators/search_page.robot
 Resource   ../resources/variables/variables_dev.robot
 
