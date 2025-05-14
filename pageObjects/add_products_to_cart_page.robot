@@ -1,8 +1,5 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    OperatingSystem
-Library    Dialogs
-Library    Collections
 Resource   ../resources/locators/cart_page.robot
 Resource   ../resources/locators/add_products_to_cart_page.robot
 Resource   ../resources/variables/variables_dev.robot
@@ -14,33 +11,34 @@ Open Product List Page
     Open Browser    ${BASE_URL_TO_PRODUCT_LIST}    Chrome
     Maximize Browser Window
     Wait Until Page Contains Element    ${PRODUCT_LIST}  timeout=15s
+
+*** Keywords ***
 Add First N Products To Cart
     [Arguments]    ${COUNT}
 
-    ${count}=    Convert To Integer    ${COUNT}
+    ${int_count}=    Convert To Integer    ${COUNT}
 
-    FOR    ${index}    IN RANGE    1    ${count + 1}
-        ${product_xpath}=    Set Variable    (//div[@class='product js-product'])[${index}]
-        ${product_link}=    Get Element Attribute    xpath=${product_xpath}//a    href
+    FOR    ${index}    IN RANGE    1    ${int_count + 1}
+        ${ajouter_button_xpath}=    Set Variable    (${PRODUCT_CARD.replace('xpath=', '')})[${index}]${AJOUTER_BUTTON_SUFFIX}
 
-        ${main_window}=    Get Window Handles
-        ${main_handle}=    Get From List    ${main_window}    0
-
-        Execute JavaScript    window.open("${product_link}", "_blank")
+        Wait Until Element Is Visible    xpath=${ajouter_button_xpath}    timeout=10s
+        Scroll Element Into View         xpath=${ajouter_button_xpath}
         Sleep    1s
+      
 
-        ${all_windows}=    Get Window Handles
-        ${new_window}=     Get From List    ${all_windows}    -1
-        Switch Window      handle=${new_window}
-
+        # Try normal click
+        Click Element    xpath=${ajouter_button_xpath}
+        Sleep  2s
+        
+        # if the CAPCHA checkbox is present, handle it
         Handle Altcha If Present
 
-        Wait Until Page Contains Element    ${ADD_TO_CART_BUTTON}    timeout=10s
-        Click Button    ${ADD_TO_CART_BUTTON}
-        Sleep    2s
+        # Wait for redirection to recommendation page
+        Wait Until Page Contains Element    ${RECOMMENDATION_PAGE_IDENTIFIER}    timeout=10s
+        Sleep    1s
 
-        Close Window
-        Switch Window      handle=${main_handle}
+        Go Back
+        Wait Until Page Contains Element    ${SEARCH_RESULTS_IDENTIFIER}    timeout=10s
     END
 
 # Go To Cart

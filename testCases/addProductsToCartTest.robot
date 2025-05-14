@@ -13,4 +13,4 @@ Suite Setup       Open Product List Page
 Add Products And Verify Cart
     Accept Cookies If Present
     Add First N Products To Cart    3
-    
+
