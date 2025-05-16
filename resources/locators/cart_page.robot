@@ -14,5 +14,5 @@ ${CART_PREVIEW_OVERLAYER}    xpath=//div[contains(@class, 'c-overlayer--basket')
 ${CART_ITEMS_COUNT}          xpath=//div[contains(@class, 'c-overlayer--basket')]//li[contains(@class, 'js-init-cartline')]
 ${CART_EMPTY_MESSAGE}    xpath=//h4[contains(text(), 'Panier vide')]
 ${CART_ITEM}    xpath=//span[@class='u-text--body-lead u-text--bold' and text()='TOTAL :']
-
+${CART_CONTENT_PAGE_IDENTIFIER}  xpath=//div[@class="sc-1p4r19j-1 jntKVs" and normalize-space(text())="Détail de votre panier"]
 

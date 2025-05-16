@@ -10,6 +10,7 @@ Enter Search Term And Submit
     Wait Until Element Is Visible    ${SEARCH_INPUT}    timeout=10s
     Input Text    ${SEARCH_INPUT}    ${SEARCH_TERM}
     Press Keys    ${SEARCH_INPUT}    RETURN
+    Handle Captcha If Present
 
 Get Product Titles
     Wait Until Element Is Visible    ${PRODUCT_TITLES}    timeout=10s

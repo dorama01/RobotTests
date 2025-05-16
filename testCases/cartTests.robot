@@ -14,7 +14,8 @@ Show Empty Cart
   [Tags]    Cart    Empty
   Hover Over Cart Icon
   Verify Empty Cart
-
+  
+  
 Add Products And Verify Cart
   [Tags]    Add to Cart
     Add First N Products To Cart    3

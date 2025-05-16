@@ -64,4 +64,11 @@ Verify Empty Cart
    Wait Until Element Is Visible    ${CART_EMPTY_MESSAGE}   timeout=15s
    Element Should Not Be Visible    ${CART_ITEM}
 
+Redirect To Cart Content After Adding Product 
+    Add First N Products To Cart   1
+    Wait Until Element Is Visible   ${BASKET_LINK}    timeout=15s
+    Click Element    ${BASKET_LINK}
+    Wait Until Element Is Visible   ${CART_CONTENT_PAGE_IDENTIFIER}    timeout=15s
+    
+    
 
