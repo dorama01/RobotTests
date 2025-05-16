@@ -10,4 +10,7 @@ Suite Teardown   Close the Browser
 Verify HTTP to HTTPS Redirection
     ${current_url}=    Get Location
     Should Start With    ${current_url}   ${BASE_URL}
+
+
+
     

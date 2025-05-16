@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-16T14:28:29.988374" rpa="false" schemaversion="5">
-<suite id="s1" name="ProductSuggestions" source="C:\Users\Hanane.BEN-AZIZE\Downloads\robotTests\testCases\ProductSuggestions.robot">
-<kw name="Open Browser To Home Page" owner="common_keywords" type="SETUP">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-16T15:41:05.758546" rpa="false" schemaversion="5">
+<suite id="s1" name="Clickjacking" source="C:\Users\Hanane.BEN-AZIZE\Downloads\robotTests\testCases\clickjacking.robot">
+<kw name="Open Browser To Home Page Without HTTPS" owner="common_keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-16T14:28:30.797885" level="INFO">Opening browser 'chrome' to base url 'https://www.cdiscount.com/'.</msg>
-<arg>${BASE_URL}</arg>
+<msg time="2025-05-16T15:41:06.562722" level="INFO">Opening browser 'chrome' to base url 'http://www.cdiscount.com/'.</msg>
+<arg>${BASE_URL_WITHOUT_HTTPS}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-16T14:28:30.797585" elapsed="5.731875"/>
+<status status="PASS" start="2025-05-16T15:41:06.562411" elapsed="9.413914"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-16T14:28:36.530064" elapsed="0.057349"/>
+<status status="PASS" start="2025-05-16T15:41:15.976923" elapsed="0.933305"/>
 </kw>
 <kw name="Accept Cookies If Present" owner="common_keywords">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
@@ -19,185 +19,85 @@
 <arg>${ACCEPT_COOKIES_BUTTON}</arg>
 <arg>5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-16T14:28:36.589048" elapsed="4.265186"/>
+<status status="PASS" start="2025-05-16T15:41:16.912249" elapsed="0.370329"/>
 </kw>
-<msg time="2025-05-16T14:28:40.854587" level="INFO">${cookie_present} = True</msg>
+<msg time="2025-05-16T15:41:17.283013" level="INFO">${cookie_present} = True</msg>
 <var>${cookie_present}</var>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${ACCEPT_COOKIES_BUTTON}</arg>
 <arg>5s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-05-16T14:28:36.588558" elapsed="4.266133"/>
+<status status="PASS" start="2025-05-16T15:41:16.911515" elapsed="0.371617"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-16T14:28:40.856122" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Accepter') or contains(text(), 'J’accepte')]'.</msg>
+<msg time="2025-05-16T15:41:17.284811" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Accepter') or contains(text(), 'J’accepte')]'.</msg>
 <arg>${ACCEPT_COOKIES_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T14:28:40.855684" elapsed="0.923615"/>
+<status status="PASS" start="2025-05-16T15:41:17.284250" elapsed="0.520899"/>
 </kw>
 <arg>${cookie_present}</arg>
 <arg>Click Button</arg>
 <arg>${ACCEPT_COOKIES_BUTTON}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-05-16T14:28:40.855119" elapsed="0.924464"/>
+<status status="PASS" start="2025-05-16T15:41:17.283609" elapsed="0.521825"/>
 </kw>
-<status status="PASS" start="2025-05-16T14:28:36.588009" elapsed="5.191988"/>
+<status status="PASS" start="2025-05-16T15:41:16.910954" elapsed="0.894773"/>
 </kw>
-<status status="PASS" start="2025-05-16T14:28:30.796800" elapsed="10.983452"/>
+<status status="PASS" start="2025-05-16T15:41:06.561653" elapsed="11.244298"/>
 </kw>
-<test id="s1-t1" name="Verify Product Suggestions Are Displayed" line="8">
-<kw name="Check Recommended Products Section Is Present" owner="product_suggestions">
-<kw name="Enter Search Term And Submit" owner="search_page_keywords">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${SEARCH_INPUT}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-16T14:28:41.792118" elapsed="5.928604"/>
+<test id="s1-t1" name="Verify Clickjacking Protection via Iframe" line="9">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-16T15:41:18.373619" level="INFO">${iframes} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="09c89c98b3083fecf8d7dbb759b2a062", element="f.98F72271C7FA70EB85252BE38890619C.d.9C288126C8CB8414B9C713AB205F1176.e.80")&gt;]</msg>
+<var>${iframes}</var>
+<arg>tag:iframe</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-16T15:41:17.808230" elapsed="0.565515"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-16T14:28:47.721847" level="INFO">Typing text 'pc' into text field 'id=search'.</msg>
-<arg>${SEARCH_INPUT}</arg>
-<arg>${SEARCH_TERM}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T14:28:47.721196" elapsed="1.432748"/>
+<kw name="Length Should Be" owner="BuiltIn">
+<msg time="2025-05-16T15:41:18.375013" level="INFO">Length is 1.</msg>
+<arg>${iframes}</arg>
+<arg>1</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<status status="PASS" start="2025-05-16T15:41:18.374487" elapsed="0.000680"/>
 </kw>
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2025-05-16T14:28:49.155505" level="INFO">Sending key(s) ('RETURN',) to id=search element.</msg>
-<msg time="2025-05-16T14:28:49.502729" level="INFO">Pressing special key RETURN to element.</msg>
-<msg time="2025-05-16T14:28:49.502935" level="INFO">Releasing special key RETURN.</msg>
-<arg>${SEARCH_INPUT}</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2025-05-16T14:28:49.154511" elapsed="0.639953"/>
+<kw name="Select Frame" owner="SeleniumLibrary">
+<msg time="2025-05-16T15:41:18.376382" level="INFO">Selecting frame '&lt;selenium.webdriver.remote.webelement.WebElement (session="09c89c98b3083fecf8d7dbb759b2a062", element="f.98F72271C7FA70EB85252BE38890619C.d.9C288126C8CB8414B9C713AB205F1176.e.80")&gt;'.</msg>
+<arg>${iframes}[0]</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="PASS" start="2025-05-16T15:41:18.375831" elapsed="3.037669"/>
 </kw>
-<kw name="Handle Captcha If Present" owner="common_keywords">
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-05-16T14:28:49.891123" level="INFO">Element 'xpath=//input[@id='altcha_checkbox']' is displayed.</msg>
-<arg>${CAPTCHA_CHECKBOX}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-16T14:28:49.798510" elapsed="0.092872"/>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-16T15:41:21.414255" elapsed="0.028640"/>
 </kw>
-<msg time="2025-05-16T14:28:49.892045" level="INFO">${is_present} = True</msg>
-<var>${is_present}</var>
-<arg>Element Should Be Visible</arg>
-<arg>${CAPTCHA_CHECKBOX}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-05-16T14:28:49.797641" elapsed="0.094543"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-16T15:41:21.444426" level="INFO">clickjacking protection is working! Iframe content could not be accessed.</msg>
+<arg>clickjacking protection is working! Iframe content could not be accessed.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-16T15:41:21.444000" elapsed="0.000609"/>
 </kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-16T14:28:49.894654" level="INFO">Clicking element 'xpath=//input[@id='altcha_checkbox']'.</msg>
-<arg>${CAPTCHA_CHECKBOX}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T14:28:49.893912" elapsed="0.210960"/>
-</kw>
-<arg>${is_present}</arg>
-<arg>Click Element</arg>
-<arg>${CAPTCHA_CHECKBOX}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-05-16T14:28:49.892779" elapsed="0.212504"/>
-</kw>
-<status status="PASS" start="2025-05-16T14:28:49.795151" elapsed="0.310411"/>
-</kw>
-<arg>${SEARCH_TERMS}</arg>
-<status status="PASS" start="2025-05-16T14:28:41.790941" elapsed="8.314818"/>
-</kw>
-<kw name="Click On First Product" owner="product_details_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${FIRST_PRODUCT_LINK}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-16T14:28:50.107274" elapsed="14.610967"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-16T14:29:04.719414" level="INFO">Clicking element 'xpath=(//ul[@id="lpBlocInline"]//li//a[contains(@class, "o-card__link")])[1]'.</msg>
-<arg>${FIRST_PRODUCT_LINK}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T14:29:04.718806" elapsed="7.441101"/>
-</kw>
-<kw name="Handle Captcha If Present" owner="common_keywords">
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-05-16T14:29:13.417624" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-232.png"&gt;&lt;img src="selenium-screenshot-232.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-05-16T14:29:13.418009" level="FAIL">Element with locator 'xpath=//input[@id='altcha_checkbox']' not found.</msg>
-<arg>${CAPTCHA_CHECKBOX}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="FAIL" start="2025-05-16T14:29:12.160987" elapsed="1.267016">Element with locator 'xpath=//input[@id='altcha_checkbox']' not found.</status>
-</kw>
-<msg time="2025-05-16T14:29:13.428396" level="INFO">${is_present} = False</msg>
-<var>${is_present}</var>
-<arg>Element Should Be Visible</arg>
-<arg>${CAPTCHA_CHECKBOX}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-05-16T14:29:12.160721" elapsed="1.267764"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>${is_present}</arg>
-<arg>Click Element</arg>
-<arg>${CAPTCHA_CHECKBOX}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-05-16T14:29:13.428937" elapsed="0.000318"/>
-</kw>
-<status status="PASS" start="2025-05-16T14:29:12.160246" elapsed="1.269230"/>
-</kw>
-<doc>Clique sur le premier produit avec SKU donné.</doc>
-<status status="PASS" start="2025-05-16T14:28:50.106350" elapsed="23.323301"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${RECOMMENDED_PRODUCTS_SECTION}</arg>
-<arg>timeout=15s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-16T14:29:13.429921" elapsed="0.073821"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>${RECOMMENDED_PRODUCTS_SECTION}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2025-05-16T14:29:13.504259" elapsed="0.410931"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>${RECOMMENDED_PRODUCTS_CARDS}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2025-05-16T14:29:13.915814" elapsed="1.890032"/>
-</kw>
-<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
-<msg time="2025-05-16T14:29:31.061241" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-233.png"&gt;&lt;img src="selenium-screenshot-233.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-05-16T14:29:31.061424" level="FAIL">Element 'xpath=//ol[@class='c-carousel__list']' still visible after 15 seconds.</msg>
-<arg>${RECOMMENDED_PRODUCTS_CARDS}</arg>
-<arg>timeout=15s</arg>
-<doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="FAIL" start="2025-05-16T14:29:15.806220" elapsed="15.257076">Element 'xpath=//ol[@class='c-carousel__list']' still visible after 15 seconds.</status>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<arg>${RECOMMENDED_PRODUCTS_CARDS}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="NOT RUN" start="2025-05-16T14:29:31.063519" elapsed="0.000041"/>
-</kw>
-<doc>Vérifie que les produits recommandés sont affichés sur la page du produit sélectionné.</doc>
-<status status="FAIL" start="2025-05-16T14:28:41.789752" elapsed="49.274082">Element 'xpath=//ol[@class='c-carousel__list']' still visible after 15 seconds.</status>
-</kw>
-<tag>ProductSuggestions</tag>
-<status status="FAIL" start="2025-05-16T14:28:41.780564" elapsed="49.283750">Element 'xpath=//ol[@class='c-carousel__list']' still visible after 15 seconds.</status>
+<status status="PASS" start="2025-05-16T15:41:17.806300" elapsed="3.638980"/>
 </test>
 <kw name="Close the Browser" owner="common_keywords" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-16T14:29:31.066271" elapsed="4.146336"/>
+<status status="PASS" start="2025-05-16T15:41:21.448671" elapsed="3.889604"/>
 </kw>
-<status status="PASS" start="2025-05-16T14:29:31.066029" elapsed="4.147072"/>
+<status status="PASS" start="2025-05-16T15:41:21.448069" elapsed="3.890499"/>
 </kw>
-<status status="FAIL" start="2025-05-16T14:28:29.991278" elapsed="65.222057"/>
+<status status="PASS" start="2025-05-16T15:41:05.762022" elapsed="19.576657"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">ProductSuggestions</stat>
 </tag>
 <suite>
-<stat name="ProductSuggestions" id="s1" pass="0" fail="1" skip="0">ProductSuggestions</stat>
+<stat name="Clickjacking" id="s1" pass="1" fail="0" skip="0">Clickjacking</stat>
 </suite>
 </statistics>
 <errors>
