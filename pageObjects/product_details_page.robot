@@ -2,6 +2,7 @@
 Library    SeleniumLibrary
 Resource   ../resources/locators/product_details_page.robot
 Resource   ../resources/variables/variables_dev.robot
+Resource   ../resources/keywords/common_keywords.robot
 
 *** Keywords ***
 
@@ -9,6 +10,7 @@ Click On First Product
     [Documentation]    Clique sur le premier produit avec SKU donné.
     Wait Until Element Is Visible    ${FIRST_PRODUCT_LINK}   timeout=10s
     Click Element    ${FIRST_PRODUCT_LINK}
+    Handle Captcha If Present
 
 
 Verify Product Image Is Visible
