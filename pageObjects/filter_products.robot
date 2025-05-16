@@ -11,6 +11,7 @@ Should Prices Be In Range
     END
 
 Select Price Filter Between 100 And 200
+    Scroll Element Into View    ${FILTER_100_200}
     Wait Until Element Is Visible    ${FILTER_100_200}     timeout=5s
     Click Element    ${FILTER_100_200} 
 
