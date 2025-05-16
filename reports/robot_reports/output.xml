@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-16T12:27:16.061739" rpa="false" schemaversion="5">
+<suite id="s1" name="HttpRedirection" source="C:\Users\Hanane.BEN-AZIZE\Downloads\robotTests\testCases\HttpRedirection.robot">
+<kw name="Open Browser To Home Page Without HTTPS" owner="common_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-16T12:27:16.920594" level="INFO">Opening browser 'chrome' to base url 'http://www.cdiscount.com/'.</msg>
+<arg>${BASE_URL_WITHOUT_HTTPS}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-16T12:27:16.920329" elapsed="7.184076"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-16T12:27:24.104759" elapsed="0.168558"/>
+</kw>
+<kw name="Accept Cookies If Present" owner="common_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ACCEPT_COOKIES_BUTTON}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-16T12:27:24.274325" elapsed="2.575583"/>
+</kw>
+<msg time="2025-05-16T12:27:26.850209" level="INFO">${cookie_present} = True</msg>
+<var>${cookie_present}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${ACCEPT_COOKIES_BUTTON}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-05-16T12:27:24.274072" elapsed="2.576217"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-16T12:27:26.851412" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Accepter') or contains(text(), 'J’accepte')]'.</msg>
+<arg>${ACCEPT_COOKIES_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-16T12:27:26.851028" elapsed="0.576702"/>
+</kw>
+<arg>${cookie_present}</arg>
+<arg>Click Button</arg>
+<arg>${ACCEPT_COOKIES_BUTTON}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-16T12:27:26.850614" elapsed="0.577389"/>
+</kw>
+<status status="PASS" start="2025-05-16T12:27:24.273719" elapsed="3.154518"/>
+</kw>
+<status status="PASS" start="2025-05-16T12:27:16.919657" elapsed="10.508754"/>
+</kw>
+<test id="s1-t1" name="Verify HTTP to HTTPS Redirection" line="10">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2025-05-16T12:27:28.106161" level="INFO">${current_url} = https://www.cdiscount.com/</msg>
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2025-05-16T12:27:27.430215" elapsed="0.676129"/>
+</kw>
+<kw name="Should Start With" owner="BuiltIn">
+<arg>${current_url}</arg>
+<arg>${BASE_URL}</arg>
+<doc>Fails if the string ``str1`` does not start with the string ``str2``.</doc>
+<status status="PASS" start="2025-05-16T12:27:28.109940" elapsed="0.001256"/>
+</kw>
+<status status="PASS" start="2025-05-16T12:27:27.428610" elapsed="0.694520"/>
+</test>
+<kw name="Close the Browser" owner="common_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-16T12:27:28.158610" elapsed="3.635323"/>
+</kw>
+<status status="PASS" start="2025-05-16T12:27:28.157707" elapsed="3.636382"/>
+</kw>
+<status status="PASS" start="2025-05-16T12:27:16.066348" elapsed="15.727805"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="HttpRedirection" id="s1" pass="1" fail="0" skip="0">HttpRedirection</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

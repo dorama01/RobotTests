@@ -10,6 +10,12 @@ Open Browser To Home Page
     Maximize Browser Window
     Accept Cookies If Present
 
+Open Browser To Home Page Without HTTPS
+    Open Browser    ${BASE_URL_WITHOUT_HTTPS}    chrome
+    Maximize Browser Window
+    Accept Cookies If Present
+
+
 Close the Browser
     Close Browser
 Handle Captcha If Present
